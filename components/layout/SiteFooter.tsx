@@ -18,7 +18,7 @@ export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-hairline bg-mid-beige">
+    <footer className="border-t border-hairline bg-off-white">
       <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
         <nav
           aria-label="Footer"
@@ -31,7 +31,7 @@ export function SiteFooter() {
         </nav>
 
         <div className="mt-16 border-t border-hairline pt-10">
-          <p className="text-body font-semibold text-brown">
+          <p className="text-body font-semibold text-near-black">
             {siteConfig.legalName}
           </p>
 
@@ -40,7 +40,7 @@ export function SiteFooter() {
             <p className="mt-2 text-small">
               <a
                 href={siteConfig.phoneHref}
-                className="text-grey transition-opacity hover:text-brown"
+                className="text-grey transition-opacity hover:text-near-black"
               >
                 {siteConfig.phone}
               </a>
@@ -55,7 +55,7 @@ export function SiteFooter() {
                 {index > 0 && index === siteConfig.townsServed.length - 1 && ", and "}
                 <Link
                   href={town.href}
-                  className="text-brown underline decoration-hairline underline-offset-4 transition-opacity hover:opacity-60"
+                  className="text-near-black underline decoration-hairline underline-offset-4 transition-opacity hover:opacity-60"
                 >
                   {town.name}
                 </Link>
