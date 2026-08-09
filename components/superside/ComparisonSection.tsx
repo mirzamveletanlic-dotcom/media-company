@@ -1,28 +1,45 @@
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { comparison } from "@/lib/superside-home-content";
-import { Eyebrow } from "./Eyebrow";
-import { MixedHeadline } from "./MixedHeadline";
+import { SectionIntro } from "./SectionIntro";
 
 export function ComparisonSection() {
   return (
-    <section aria-labelledby="why-us-heading" className="section-block bg-cream px-6">
-      <div className="mx-auto max-w-wide">
-        <ScrollReveal className="mb-16 max-w-copy">
-          <Eyebrow>{comparison.eyebrow}</Eyebrow>
-          <MixedHeadline
+    <section aria-labelledby="why-us-heading" className="section-pad border-t border-hairline bg-cream">
+      <div className="section-inner">
+        <ScrollReveal className="mb-12 md:mb-16">
+          <SectionIntro
             id="why-us-heading"
-            before={comparison.headlineBefore}
-            serif={comparison.headlineSerif}
+            eyebrow={comparison.eyebrow}
+            headlineBefore={comparison.headlineBefore}
+            headlineSerif={comparison.headlineSerif}
           />
         </ScrollReveal>
-        <ul className="grid gap-12 md:grid-cols-3 md:gap-8">
+
+        <ul className="grid gap-10 md:grid-cols-3 md:gap-8">
           {comparison.tiles.map((tile) => (
-            <li key={tile.title}>
-              <h3 className="text-sub text-forest">{tile.title}</h3>
+            <li
+              key={tile.title}
+              className={`rounded-[var(--radius-card)] p-8 ${
+                tile.highlight ? "bg-forest text-white" : "bg-white"
+              }`}
+            >
+              <h3 className={`text-sub ${tile.highlight ? "text-lime" : "text-forest"}`}>
+                {tile.title}
+              </h3>
               <ul className="mt-6 space-y-3">
                 {tile.items.map((item) => (
-                  <li key={item} className="flex gap-3 text-body text-near-black">
-                    <span className="text-lime" aria-hidden="true">●</span>
+                  <li
+                    key={item}
+                    className={`flex gap-3 text-small leading-relaxed ${
+                      tile.highlight ? "text-white/85" : "text-near-black"
+                    }`}
+                  >
+                    <span
+                      className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${
+                        tile.highlight ? "bg-lime" : "bg-forest"
+                      }`}
+                      aria-hidden="true"
+                    />
                     {item}
                   </li>
                 ))}

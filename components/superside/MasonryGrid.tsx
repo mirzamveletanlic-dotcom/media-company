@@ -4,10 +4,10 @@ import Image from "next/image";
 import { IMAGE_BLUR, type MasonryTile } from "@/lib/superside-home-content";
 
 const heightMap = {
-  sm: "h-40 md:h-48",
-  md: "h-48 md:h-60",
-  lg: "h-56 md:h-72",
-  xl: "h-64 md:h-80",
+  sm: "h-44",
+  md: "h-52",
+  lg: "h-64",
+  xl: "h-72",
 };
 
 type MasonryGridProps = {
@@ -15,22 +15,19 @@ type MasonryGridProps = {
 };
 
 export function MasonryGrid({ columns }: MasonryGridProps) {
-  const offsets = ["pt-0", "pt-10 md:pt-16", "pt-4 md:pt-8"];
+  const offsets = ["pt-0", "pt-14", "pt-6"];
 
   return (
-    <div
-      aria-hidden="true"
-      className="absolute -right-2 top-1/2 flex h-[115%] w-full max-w-none -translate-y-1/2 gap-2.5 md:gap-3 lg:gap-3.5"
-    >
+    <div className="absolute inset-y-0 right-0 flex h-full w-[58%] gap-3 pl-4 pr-0">
       {columns.map((column, colIndex) => (
         <div
           key={colIndex}
-          className={`flex w-1/3 flex-col gap-2.5 md:gap-3 lg:gap-3.5 ${offsets[colIndex]}`}
+          className={`flex w-1/3 flex-col gap-3 ${offsets[colIndex]}`}
         >
-          {column.map((tile) => (
+          {column.map((tile, tileIndex) => (
             <div
-              key={`${colIndex}-${tile.src}-${tile.alt}`}
-              className={`${heightMap[tile.tileHeight]} shrink-0 overflow-hidden rounded-2xl md:rounded-[20px]`}
+              key={`${colIndex}-${tileIndex}`}
+              className={`${heightMap[tile.tileHeight]} shrink-0 overflow-hidden rounded-[var(--radius-card)]`}
             >
               <Image
                 src={tile.src}
@@ -39,7 +36,7 @@ export function MasonryGrid({ columns }: MasonryGridProps) {
                 height={tile.height}
                 placeholder="blur"
                 blurDataURL={IMAGE_BLUR}
-                sizes="(max-width: 768px) 33vw, 20vw"
+                sizes="20vw"
                 className="h-full w-full object-cover"
               />
             </div>

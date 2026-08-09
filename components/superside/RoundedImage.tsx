@@ -7,17 +7,9 @@ type RoundedImageProps = {
   width: number;
   height: number;
   priority?: boolean;
-  className?: string;
 };
 
-export function RoundedImage({
-  src,
-  alt,
-  width,
-  height,
-  priority = false,
-  className = "",
-}: RoundedImageProps) {
+export function RoundedImage({ src, alt, width, height, priority = false }: RoundedImageProps) {
   return (
     <Image
       src={src}
@@ -29,7 +21,7 @@ export function RoundedImage({
       placeholder="blur"
       blurDataURL={IMAGE_BLUR}
       sizes="(max-width: 768px) 100vw, 50vw"
-      className={`rounded-image h-full w-full object-cover ${className}`.trim()}
+      className="h-full w-full object-cover"
     />
   );
 }

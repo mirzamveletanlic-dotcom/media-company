@@ -23,10 +23,9 @@ export type MasonryTile = {
 };
 
 export const hero = {
-  headlineBefore: "Your ",
-  headlineSerif: "marketing team's",
-  headlineAfter: " marketing team",
-  subline: `Websites, SEO, social, and video for trades, clinics, and restaurants in ${siteConfig.city}. One flat price. Live in 21 days.`,
+  headlineBefore: "Websites built to ",
+  headlineSerif: "book jobs.",
+  subline: `One team for trades, clinics, and restaurants in ${siteConfig.city}. Website, SEO, social, and video — $497/month, live in 21 days.`,
   masonryColumns: [
     [
       { src: "/images/hero.jpg", alt: "Contractor on a job site", width: 600, height: 750, tileHeight: "xl" as const },
@@ -40,34 +39,39 @@ export const hero = {
     ],
     [
       { src: "/images/step-discovery.jpg", alt: "Content planning session", width: 600, height: 800, tileHeight: "xl" as const },
-      { src: "/images/hero.jpg", alt: "Trade work in progress", width: 600, height: 750, tileHeight: "sm" as const },
+      { src: "/images/step-launch.jpg", alt: "Analytics review", width: 600, height: 400, tileHeight: "sm" as const },
       { src: "/images/missed-calls.jpg", alt: "Google map results", width: 600, height: 500, tileHeight: "md" as const },
     ],
   ],
 } as const;
 
 export const problem = {
-  eyebrow: "THE LEAK",
-  headlineBefore: "Costing you jobs ",
+  eyebrow: "THE PROBLEM",
+  headlineBefore: "Missing jobs ",
   headlineSerif: "every week",
   stats: [
     { value: "62%", label: "Callers who hang up on voicemail", footnote: 1 as FootnoteId },
     { value: "3", label: "Spots in the Google map pack", footnote: 2 as FootnoteId },
     { value: "75%", label: "People who judge you by your website", footnote: 3 as FootnoteId },
   ],
-  body: `<strong>Missed calls go to your competitor.</strong> When the phone rolls to voicemail on a job site, most callers never leave a message. <strong>If you are not in the map pack, you are invisible</strong> for the searches that book the most work.`,
+  body: `Missed calls go to your competitor. When the phone rolls to voicemail on a job site, most callers never leave a message. If you are not in the map pack, you are invisible for the searches that book the most work.`,
   imageSrc: "/images/missed-calls.jpg",
   imageAlt: "Contractor missing a call on a job site",
   imageWidth: 1920,
   imageHeight: 1280,
 } as const;
 
+export const servicesSection = {
+  eyebrow: "SERVICES",
+  headlineBefore: "Everything to ",
+  headlineSerif: "book more jobs",
+} as const;
+
 export const serviceCards = [
   {
     id: "websites",
-    title: "Custom websites that book calls",
-    description:
-      "Mobile-first design, click-to-call above the fold, and copy written for one goal: a booked job. Live in 21 days on average.",
+    title: "Websites that book calls",
+    description: "Mobile-first. Click-to-call above the fold. Copy written for one goal. Live in 21 days.",
     imageSrc: "/images/step-build.jpg",
     imageAlt: "Website design on a laptop",
     imageWidth: 1200,
@@ -77,9 +81,8 @@ export const serviceCards = [
   },
   {
     id: "google",
-    title: "Local SEO for map pack visibility",
-    description:
-      "Google Business Profile, citations, review requests, and monthly ranking reports. Built for the searches that book work.",
+    title: "Local SEO",
+    description: "Google Business Profile, citations, review requests, and monthly ranking reports.",
     imageSrc: "/images/missed-calls.jpg",
     imageAlt: "Local search results on a phone",
     imageWidth: 1920,
@@ -89,9 +92,8 @@ export const serviceCards = [
   },
   {
     id: "social",
-    title: "Social posts without daily effort",
-    description:
-      "Eight on-brand posts per month for Facebook and Instagram. We edit your job-site photos and write every caption.",
+    title: "Social media",
+    description: "Eight on-brand posts per month. We edit your job-site photos and write every caption.",
     imageSrc: "/images/step-discovery.jpg",
     imageAlt: "Team planning social content",
     imageWidth: 1200,
@@ -101,9 +103,8 @@ export const serviceCards = [
   },
   {
     id: "video",
-    title: "Video that shows your work",
-    description:
-      "Quarterly on-site shoots. Before/after reveals, walkthroughs, and testimonials formatted for site, Google, and social.",
+    title: "Video production",
+    description: "Quarterly shoots. Before/after reveals, walkthroughs, and testimonials for every channel.",
     imageSrc: "/images/hero.jpg",
     imageAlt: "Trade work in progress",
     imageWidth: 1920,
@@ -113,33 +114,33 @@ export const serviceCards = [
   },
   {
     id: "branding",
-    title: "Brand assets that match everywhere",
-    description:
-      "Logo files, colours, fonts, and templates for estimates and invoices. One look from your van to your website.",
+    title: "Branding",
+    description: "Logo files, colours, fonts, and templates. One look from your van to your website.",
     imageSrc: "/images/after.jpg",
     imageAlt: "Professional brand presentation",
     imageWidth: 1920,
     imageHeight: 1282,
     descriptionPosition: "below-title" as const,
+    href: "/services/website-design",
   },
   {
     id: "tracking",
-    title: "Call tracking and monthly reports",
-    description:
-      "Know which calls become jobs. Every month: calls, form fills, and map rankings — not vanity metrics.",
+    title: "Call tracking",
+    description: "Know which calls become jobs. Monthly reports on calls, forms, and map rankings.",
     imageSrc: "/images/step-launch.jpg",
     imageAlt: "Analytics dashboard review",
     imageWidth: 1200,
     imageHeight: 800,
     descriptionPosition: "bottom" as const,
+    href: "/pricing",
   },
 ] as const;
 
 export const workflowSection = {
   eyebrow: "HOW WE WORK",
-  headlineBefore: "Local marketing workflows guided by ",
-  headlineSerif: "industry experts",
-  body: "Our team handles discovery, build, and launch — so you stay on the job site while your marketing runs in the background.",
+  headlineBefore: "Three steps to ",
+  headlineSerif: "live and tracking",
+  body: "You stay on the job site. We handle discovery, build, and launch — then report the numbers every month.",
   imageSrc: "/images/hero.jpg",
   imageWidth: 1920,
   imageHeight: 1272,
@@ -152,93 +153,22 @@ export const workflowSection = {
     {
       icon: "sparkle" as const,
       label: "Build",
-      description: "Copy, design, and SEO in one shared doc. You approve before anything goes live.",
+      description: "Copy, design, and SEO in one doc. You approve before anything goes live.",
     },
     {
       icon: "chart" as const,
-      label: "Launch & track",
+      label: "Launch",
       description: "Site live, Google profile optimized, call tracking on. First report in 30 days.",
     },
   ],
 } as const;
 
-export const services = [
-  {
-    id: "websites",
-    eyebrow: "WEBSITES",
-    headlineBefore: "Built to ",
-    headlineSerif: "book jobs",
-    bg: "cream" as const,
-    imageFirst: false,
-    imageSrc: "/images/step-build.jpg",
-    imageAlt: "Website design in progress",
-    imageWidth: 1200,
-    imageHeight: 799,
-    body: `<strong>Every page is written for one goal: a booked call.</strong> Mobile-first layout, click-to-call above the fold, and forms that work on a cracked phone screen at a job site. <strong>Live in 21 days on average.</strong>`,
-    stat: { value: "21", label: "Days to live site on average", footnote: 6 as FootnoteId },
-  },
-  {
-    id: "google",
-    eyebrow: "LOCAL SEO",
-    headlineBefore: "Own the map, ",
-    headlineSerif: "not just the page",
-    bg: "forest" as const,
-    imageFirst: true,
-    imageSrc: "/images/missed-calls.jpg",
-    imageAlt: "Google Business Profile on phone",
-    imageWidth: 1920,
-    imageHeight: 1280,
-    body: `<strong>Most local jobs start on Google Maps.</strong> We optimize your Business Profile, build local citations, and target the keywords your customers actually type. <strong>Review requests go out automatically.</strong>`,
-    stat: { value: "34", label: "Avg. new reviews per client, year one", footnote: 5 as FootnoteId },
-  },
-  {
-    id: "social",
-    eyebrow: "SOCIAL MEDIA",
-    headlineBefore: "Stay visible ",
-    headlineSerif: "without daily posting",
-    bg: "cream" as const,
-    imageFirst: false,
-    imageSrc: "/images/step-discovery.jpg",
-    imageAlt: "Social content planning",
-    imageWidth: 1200,
-    imageHeight: 800,
-    body: `<strong>Eight posts per month, written and designed for you.</strong> Finished jobs, team photos, seasonal offers — on-brand for Facebook and Instagram. <strong>No daily posting burden on your team.</strong>`,
-  },
-  {
-    id: "video",
-    eyebrow: "VIDEO",
-    headlineBefore: "Proof you ",
-    headlineSerif: "can't fake",
-    bg: "sage" as const,
-    imageFirst: true,
-    imageSrc: "/images/hero.jpg",
-    imageAlt: "Trade work video still",
-    imageWidth: 1920,
-    imageHeight: 1272,
-    body: `<strong>Homeowners trust what they can see.</strong> We shoot and edit short videos of your team at work — before/after reveals, walkthroughs, testimonials. <strong>One shoot per quarter.</strong>`,
-    stat: { value: "4", label: "Video shoots included per year" },
-  },
-  {
-    id: "branding",
-    eyebrow: "BRANDING",
-    headlineBefore: "Look like the biggest shop ",
-    headlineSerif: "in town",
-    bg: "cream" as const,
-    imageFirst: false,
-    imageSrc: "/images/after.jpg",
-    imageAlt: "Professional brand assets",
-    imageWidth: 1920,
-    imageHeight: 1282,
-    body: `<strong>Your van, your uniforms, and your website should match.</strong> Logo files, colours, fonts, and templates for invoices and estimates. <strong>One consistent look everywhere.</strong>`,
-  },
-] as const;
-
 export const pricing = {
-  eyebrow: "PRICING MODEL",
-  headlineBefore: "One price. ",
-  headlineSerif: "Published online",
+  eyebrow: "PRICING",
+  headlineBefore: "$497/month. ",
+  headlineSerif: "Published online.",
   price: 497,
-  chips: [
+  includes: [
     "Custom website — live in ~21 days",
     "Local SEO — profile, citations, reviews",
     "Call tracking — know what converts",
@@ -246,58 +176,36 @@ export const pricing = {
     "Quarterly video shoot",
     "Monthly report — calls and rankings",
   ],
-  body: `<strong>$497/month. No setup fee, no surprise invoices.</strong> Cancel with 30 days notice — you keep your site and domain.`,
+  body: `No setup fee. No surprise invoices. Cancel with 30 days notice — you keep your site and domain.`,
 } as const;
 
-export const guarantees = [
-  {
-    claim: "Live in 30 days or we keep working free.",
-    detail: "When you provide copy and assets within 5 business days.",
-    footnote: 4 as FootnoteId,
-  },
-  {
-    claim: "One flat price. No surprise invoices.",
-    detail: "$497/month. Everything listed. Nothing hidden.",
-  },
-  {
-    claim: "You own your site and ad accounts.",
-    detail: "Domain, hosting credentials, and ad access — always yours.",
-  },
-  {
-    claim: "Monthly numbers, not vanity metrics.",
-    detail: "Calls, form fills, and map rankings. Every report.",
-  },
-] as const;
-
-export const processSteps = [
-  {
-    step: 1,
-    title: "Discovery call",
-    duration: "15 minutes",
-    happens: "We learn what you do, where you work, and what a booked job is worth.",
-    need: "Nothing — just show up with your phone.",
-    get: "A clear scope and timeline sent within 24 hours.",
-  },
-  {
-    step: 2,
-    title: "Build and review",
-    duration: "2–3 weeks",
-    happens: "Copy, design, and SEO land in one shared doc for your approval.",
-    need: "Photos from recent jobs, logo files if you have them, and 48-hour feedback.",
-    get: "A staging link to review before anything goes live.",
-  },
-  {
-    step: 3,
-    title: "Launch and track",
-    duration: "Day 21 on average",
-    happens: "Site goes live, Google profile optimized, call tracking starts.",
-    need: "Final sign-off and DNS access (we walk you through it).",
-    get: "Live site, tracking dashboard, and your first monthly report in 30 days.",
-  },
-] as const;
+export const guarantees = {
+  eyebrow: "GUARANTEES",
+  headlineBefore: "Promises we ",
+  headlineSerif: "actually keep",
+  items: [
+    {
+      claim: "Live in 30 days or we keep working free.",
+      detail: "When you provide copy and assets within 5 business days.",
+      footnote: 4 as FootnoteId,
+    },
+    {
+      claim: "One flat price. No surprise invoices.",
+      detail: "$497/month. Everything listed. Nothing hidden.",
+    },
+    {
+      claim: "You own your site and ad accounts.",
+      detail: "Domain, hosting credentials, and ad access — always yours.",
+    },
+    {
+      claim: "Monthly numbers, not vanity metrics.",
+      detail: "Calls, form fills, and map rankings. Every report.",
+    },
+  ],
+} as const;
 
 export const beforeAfter = {
-  eyebrow: "PROOF",
+  eyebrow: "RESULTS",
   headlineBefore: "Before and ",
   headlineSerif: "after",
   beforeSrc: "/images/before.jpg",
@@ -315,6 +223,7 @@ export const comparison = {
   tiles: [
     {
       title: "[BRAND]",
+      highlight: true,
       items: [
         "$497/month, published online",
         "Live in 21 days on average",
@@ -324,6 +233,7 @@ export const comparison = {
     },
     {
       title: "Typical agency",
+      highlight: false,
       items: [
         "$3,000–$8,000 upfront, then retainers",
         "8–16 week timelines common",
@@ -333,6 +243,7 @@ export const comparison = {
     },
     {
       title: "Do it yourself",
+      highlight: false,
       items: [
         "Squarespace/Wix: $30–$50/month",
         "Your evenings and weekends",
@@ -343,18 +254,22 @@ export const comparison = {
   ],
 } as const;
 
-export const answers = [
-  { question: "How much does a website cost?", href: "/faq#website-cost" },
-  { question: "How long does a site take to build?", href: "/faq#timeline" },
-  { question: "What is included in $497/month?", href: "/faq#whats-included" },
-  { question: "Do you work with HVAC companies?", href: "/faq#trades" },
-] as const;
+export const answers = {
+  eyebrow: "ANSWERS",
+  headlineBefore: "Straight ",
+  headlineSerif: "answers",
+  items: [
+    { question: "How much does a website cost?", href: "/faq#website-cost" },
+    { question: "How long does a site take to build?", href: "/faq#timeline" },
+    { question: "What is included in $497/month?", href: "/faq#whats-included" },
+    { question: "Do you work with HVAC companies?", href: "/faq#trades" },
+  ],
+} as const;
 
 export const finalCta = {
   headlineBefore: "Stop losing jobs ",
-  headlineSerif: "you never knew about",
+  headlineSerif: "you never knew about.",
   imageSrc: "/images/hero.jpg",
-  imageAlt: "Team at work",
   imageWidth: 1920,
   imageHeight: 1272,
 } as const;

@@ -1,62 +1,35 @@
-import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { pricing } from "@/lib/superside-home-content";
-import { Eyebrow } from "./Eyebrow";
 import { LimeButton } from "./LimeButton";
-import { MixedHeadline } from "./MixedHeadline";
+import { SectionIntro } from "./SectionIntro";
 
 export function PricingSection() {
   return (
-    <section id="pricing" aria-labelledby="pricing-heading" className="section-block bg-cream px-6">
-      <div className="mx-auto max-w-wide">
-        <ScrollReveal className="max-w-copy">
-          <Eyebrow>{pricing.eyebrow}</Eyebrow>
-          <MixedHeadline
-            before={pricing.headlineBefore}
-            serif={pricing.headlineSerif}
+    <section id="pricing" aria-labelledby="pricing-heading" className="section-pad bg-forest">
+      <div className="section-inner grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-20">
+        <ScrollReveal>
+          <SectionIntro
+            id="pricing-heading"
+            eyebrow={pricing.eyebrow}
+            headlineBefore={pricing.headlineBefore}
+            headlineSerif={pricing.headlineSerif}
+            light
           />
-          <p className="mt-10 text-stat text-forest">${pricing.price}/month</p>
-          <ul className="mt-10 space-y-3">
-            {pricing.chips.map((chip) => (
-              <li key={chip} className="flex gap-3 text-body text-near-black">
-                <span className="text-lime" aria-hidden="true">●</span>
-                {chip}
-              </li>
-            ))}
-          </ul>
-          <p
-            className="mt-10 text-body text-near-black"
-            dangerouslySetInnerHTML={{ __html: pricing.body }}
-          />
+          <p className="mt-8 max-w-copy text-body text-white/70">{pricing.body}</p>
           <div className="mt-10">
-            <LimeButton href="/book">Book a call</LimeButton>
+            <LimeButton href="/book" className="!px-7 !py-3.5">
+              Book a call
+            </LimeButton>
           </div>
         </ScrollReveal>
-      </div>
-    </section>
-  );
-}
 
-export function AnswersSection() {
-  return (
-    <section id="answers" aria-labelledby="answers-heading" className="section-block bg-cream px-6">
-      <div className="mx-auto max-w-copy">
-        <ScrollReveal>
-          <Eyebrow>ANSWERS</Eyebrow>
-          <h2 id="answers-heading" className="text-section text-near-black">
-            Straight, not scripted.
-          </h2>
-          <ul className="mt-10 divide-y divide-hairline border-y border-hairline">
-            {[
-              { q: "How much does a website cost?", href: "/faq#website-cost" },
-              { q: "How long does a site take to build?", href: "/faq#timeline" },
-              { q: "What is included in $497/month?", href: "/faq#whats-included" },
-              { q: "Do you work with HVAC companies?", href: "/faq#trades" },
-            ].map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="block py-5 text-body text-forest hover:underline">
-                  {item.q} →
-                </Link>
+        <ScrollReveal delay={120}>
+          <p className="text-stat text-lime">${pricing.price}/mo</p>
+          <ul className="mt-8 space-y-4 border-t border-white/15 pt-8">
+            {pricing.includes.map((item) => (
+              <li key={item} className="flex gap-3 text-body text-white/90">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-lime" aria-hidden="true" />
+                {item}
               </li>
             ))}
           </ul>

@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { IMAGE_BLUR, serviceCards } from "@/lib/superside-home-content";
-import { Eyebrow } from "./Eyebrow";
-import { MixedHeadline } from "./MixedHeadline";
+import { IMAGE_BLUR, serviceCards, servicesSection } from "@/lib/superside-home-content";
+import { SectionIntro } from "./SectionIntro";
 
 type ServiceCardProps = {
   title: string;
@@ -13,7 +12,7 @@ type ServiceCardProps = {
   imageWidth: number;
   imageHeight: number;
   descriptionPosition: "below-title" | "bottom";
-  href?: string;
+  href: string;
 };
 
 function ServiceCard({
@@ -26,8 +25,11 @@ function ServiceCard({
   descriptionPosition,
   href,
 }: ServiceCardProps) {
-  const inner = (
-    <>
+  return (
+    <Link
+      href={href}
+      className="group relative flex aspect-[4/3] flex-col overflow-hidden rounded-[var(--radius-card)]"
+    >
       <Image
         src={imageSrc}
         alt={imageAlt}
@@ -36,14 +38,11 @@ function ServiceCard({
         placeholder="blur"
         blurDataURL={IMAGE_BLUR}
         sizes="(max-width: 768px) 100vw, 33vw"
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
       />
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/25 to-black/55"
-        aria-hidden="true"
-      />
+      <div className="card-scrim absolute inset-0" aria-hidden="true" />
       <div className="relative flex h-full flex-col p-6 md:p-7">
-        <h3 className="text-sub leading-tight text-white">{title}</h3>
+        <h3 className="text-sub text-white">{title}</h3>
         <p
           className={`text-small leading-relaxed text-white/85 ${
             descriptionPosition === "bottom" ? "mt-auto pt-4" : "mt-3"
@@ -52,33 +51,20 @@ function ServiceCard({
           {description}
         </p>
       </div>
-    </>
+    </Link>
   );
-
-  const className =
-    "group relative aspect-[4/3] overflow-hidden rounded-2xl md:rounded-[20px]";
-
-  if (href) {
-    return (
-      <Link href={href} className={className}>
-        {inner}
-      </Link>
-    );
-  }
-
-  return <article className={className}>{inner}</article>;
 }
 
 export function ServiceGridSection() {
   return (
-    <section id="services" aria-labelledby="services-heading" className="section-block bg-cream px-6">
-      <div className="mx-auto max-w-wide">
-        <ScrollReveal className="mb-12 max-w-copy md:mb-16">
-          <Eyebrow>SERVICES</Eyebrow>
-          <MixedHeadline
+    <section id="services" aria-labelledby="services-heading" className="section-pad border-t border-hairline bg-cream">
+      <div className="section-inner">
+        <ScrollReveal className="mb-12 md:mb-16">
+          <SectionIntro
             id="services-heading"
-            before="Everything you need to "
-            serif="book more jobs"
+            eyebrow={servicesSection.eyebrow}
+            headlineBefore={servicesSection.headlineBefore}
+            headlineSerif={servicesSection.headlineSerif}
           />
         </ScrollReveal>
 
