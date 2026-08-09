@@ -62,6 +62,106 @@ export const problem = {
   imageHeight: 1280,
 } as const;
 
+export const serviceCards = [
+  {
+    id: "websites",
+    title: "Custom websites that book calls",
+    description:
+      "Mobile-first design, click-to-call above the fold, and copy written for one goal: a booked job. Live in 21 days on average.",
+    imageSrc: "/images/step-build.jpg",
+    imageAlt: "Website design on a laptop",
+    imageWidth: 1200,
+    imageHeight: 799,
+    descriptionPosition: "bottom" as const,
+    href: "/services/website-design",
+  },
+  {
+    id: "google",
+    title: "Local SEO for map pack visibility",
+    description:
+      "Google Business Profile, citations, review requests, and monthly ranking reports. Built for the searches that book work.",
+    imageSrc: "/images/missed-calls.jpg",
+    imageAlt: "Local search results on a phone",
+    imageWidth: 1920,
+    imageHeight: 1280,
+    descriptionPosition: "below-title" as const,
+    href: "/services/local-seo",
+  },
+  {
+    id: "social",
+    title: "Social posts without daily effort",
+    description:
+      "Eight on-brand posts per month for Facebook and Instagram. We edit your job-site photos and write every caption.",
+    imageSrc: "/images/step-discovery.jpg",
+    imageAlt: "Team planning social content",
+    imageWidth: 1200,
+    imageHeight: 800,
+    descriptionPosition: "below-title" as const,
+    href: "/services/social-media",
+  },
+  {
+    id: "video",
+    title: "Video that shows your work",
+    description:
+      "Quarterly on-site shoots. Before/after reveals, walkthroughs, and testimonials formatted for site, Google, and social.",
+    imageSrc: "/images/hero.jpg",
+    imageAlt: "Trade work in progress",
+    imageWidth: 1920,
+    imageHeight: 1272,
+    descriptionPosition: "below-title" as const,
+    href: "/services/brand-photography",
+  },
+  {
+    id: "branding",
+    title: "Brand assets that match everywhere",
+    description:
+      "Logo files, colours, fonts, and templates for estimates and invoices. One look from your van to your website.",
+    imageSrc: "/images/after.jpg",
+    imageAlt: "Professional brand presentation",
+    imageWidth: 1920,
+    imageHeight: 1282,
+    descriptionPosition: "below-title" as const,
+  },
+  {
+    id: "tracking",
+    title: "Call tracking and monthly reports",
+    description:
+      "Know which calls become jobs. Every month: calls, form fills, and map rankings — not vanity metrics.",
+    imageSrc: "/images/step-launch.jpg",
+    imageAlt: "Analytics dashboard review",
+    imageWidth: 1200,
+    imageHeight: 800,
+    descriptionPosition: "bottom" as const,
+  },
+] as const;
+
+export const workflowSection = {
+  eyebrow: "HOW WE WORK",
+  headlineBefore: "Local marketing workflows guided by ",
+  headlineSerif: "industry experts",
+  body: "Our team handles discovery, build, and launch — so you stay on the job site while your marketing runs in the background.",
+  imageSrc: "/images/hero.jpg",
+  imageWidth: 1920,
+  imageHeight: 1272,
+  steps: [
+    {
+      icon: "clipboard" as const,
+      label: "Discovery",
+      description: "15-minute call. We learn your trade, service area, and what a booked job is worth.",
+    },
+    {
+      icon: "sparkle" as const,
+      label: "Build",
+      description: "Copy, design, and SEO in one shared doc. You approve before anything goes live.",
+    },
+    {
+      icon: "chart" as const,
+      label: "Launch & track",
+      description: "Site live, Google profile optimized, call tracking on. First report in 30 days.",
+    },
+  ],
+} as const;
+
 export const services = [
   {
     id: "websites",
