@@ -18,8 +18,8 @@ export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-hairline bg-off-white">
-      <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+    <footer className="border-t border-white/10 bg-forest-deep">
+      <div className="mx-auto max-w-wide px-6 py-16 md:py-20">
         <nav
           aria-label="Footer"
           className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4"
@@ -30,24 +30,22 @@ export function SiteFooter() {
           <FooterColumn title="Contact" links={footerContactLinks} />
         </nav>
 
-        <div className="mt-16 border-t border-hairline pt-10">
-          <p className="text-body font-semibold text-near-black">
-            {siteConfig.legalName}
-          </p>
+        <div className="mt-16 border-t border-white/10 pt-10">
+          <p className="text-body font-semibold text-white">{siteConfig.legalName}</p>
 
           <address className="mt-4 not-italic">
-            <p className="text-small text-grey">{formatAddress()}</p>
+            <p className="text-small text-white/60">{formatAddress()}</p>
             <p className="mt-2 text-small">
               <a
                 href={siteConfig.phoneHref}
-                className="text-grey transition-opacity hover:text-near-black"
+                className="text-white/60 transition-colors hover:text-lime"
               >
                 {siteConfig.phone}
               </a>
             </p>
           </address>
 
-          <p className="mt-6 text-small text-grey">
+          <p className="mt-6 text-small text-white/60">
             Serving{" "}
             {siteConfig.townsServed.map((town, index) => (
               <span key={town.href}>
@@ -55,7 +53,7 @@ export function SiteFooter() {
                 {index > 0 && index === siteConfig.townsServed.length - 1 && ", and "}
                 <Link
                   href={town.href}
-                  className="text-near-black underline decoration-hairline underline-offset-4 transition-opacity hover:opacity-60"
+                  className="text-lime underline decoration-white/20 underline-offset-4 transition-opacity hover:opacity-80"
                 >
                   {town.name}
                 </Link>
@@ -64,7 +62,7 @@ export function SiteFooter() {
             and surrounding towns in {siteConfig.region}.
           </p>
 
-          <p className="mt-8 text-small text-grey">
+          <p className="mt-8 text-small text-white/40">
             &copy; {currentYear} {siteConfig.legalName}. All rights reserved.
           </p>
         </div>

@@ -5,27 +5,27 @@ import { mainNavLinks } from "@/lib/navigation";
 import { siteConfig } from "@/lib/site-config";
 import { BookCallLink } from "./BookCallLink";
 
-export function SiteHeader() {
+export function SupersideNav() {
   return (
-    <header className="sticky top-0 z-40 border-b border-hairline bg-cream/95 backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-w-wide items-center justify-between px-6 md:h-16">
-        <Link href="/" className="text-body font-semibold text-forest">
+    <header className="absolute inset-x-0 top-0 z-50">
+      <div className="mx-auto flex h-16 max-w-wide items-center justify-between px-6 md:h-20">
+        <Link href="/" className="text-body font-semibold text-white">
           {siteConfig.brand}
         </Link>
 
-        <nav aria-label="Main" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Main" className="hidden items-center gap-8 lg:flex">
           {mainNavLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-small text-near-black transition-opacity hover:opacity-60"
+              className="text-small text-white/80 transition-colors hover:text-white"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <BookCallLink />
+        <BookCallLink className="!text-caption" />
       </div>
     </header>
   );

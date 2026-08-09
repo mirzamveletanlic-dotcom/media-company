@@ -1,68 +1,80 @@
 @import "tailwindcss";
 
-/* ─── Apple design tokens ─────────────────────────────────────────────────── */
+/* ─── Superside-inspired design tokens ───────────────────────────────────── */
 
 :root {
+  --cream: #f5f0e8;
+  --forest: #0a1f1a;
+  --forest-deep: #051612;
+  --sage: #2d4f44;
+  --brown-dark: #221c1c;
+  --lime: #d4ff5c;
+  --coral: #e8a598;
+  --near-black: #1a1a1a;
+  --grey: #6b6b6b;
+  --hairline: #d8d0c4;
   --white: #ffffff;
-  --off-white: #f5f5f7;
-  --near-black: #1d1d1f;
-  --grey: #86868b;
-  --hairline: #d2d2d7;
-  --black: #000000;
-  --accent: #0066cc;
 
-  /* Type — mobile first */
-  --size-hero: 44px;
-  --size-section: 34px;
-  --size-sub: 24px;
-  --size-stat: 40px;
-  --size-body: 19px;
-  --size-small: 16px;
-  --size-caption: 13px;
-  --size-footnote: 12px;
+  --size-hero: 40px;
+  --size-section: 32px;
+  --size-sub: 22px;
+  --size-stat: 36px;
+  --size-body: 17px;
+  --size-small: 15px;
+  --size-caption: 12px;
+  --size-footnote: 11px;
+  --size-eyebrow: 11px;
 
-  --space-section-apple-y: 72px;
-  --width-copy: 720px;
-  --width-wide: 1040px;
+  --space-section-y: 64px;
+  --width-copy: 560px;
+  --width-wide: 1200px;
+  --radius-image: 20px;
 }
 
 @media (min-width: 768px) {
   :root {
-    --size-hero: 96px;
-    --size-section: 56px;
-    --size-sub: 32px;
-    --size-stat: 64px;
-    --size-body: 21px;
-    --size-small: 17px;
-    --size-caption: 14px;
+    --size-hero: 64px;
+    --size-section: 48px;
+    --size-sub: 28px;
+    --size-stat: 56px;
+    --size-body: 18px;
+    --size-small: 16px;
+    --size-caption: 13px;
     --size-footnote: 12px;
-    --space-section-apple-y: 140px;
+    --size-eyebrow: 12px;
+    --space-section-y: 120px;
+    --radius-image: 24px;
   }
 }
 
 @theme {
-  --color-white: var(--white);
-  --color-off-white: var(--off-white);
+  --color-cream: var(--cream);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-sage: var(--sage);
+  --color-brown-dark: var(--brown-dark);
+  --color-lime: var(--lime);
+  --color-coral: var(--coral);
   --color-near-black: var(--near-black);
   --color-grey: var(--grey);
   --color-hairline: var(--hairline);
-  --color-black: var(--black);
-  --color-accent: var(--accent);
+  --color-white: var(--white);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
 
   --text-hero: var(--size-hero);
-  --text-hero--line-height: 1.05;
-  --text-hero--letter-spacing: -0.03em;
+  --text-hero--line-height: 1.08;
+  --text-hero--letter-spacing: -0.02em;
   --text-hero--font-weight: 600;
 
   --text-section: var(--size-section);
-  --text-section--line-height: 1.08;
+  --text-section--line-height: 1.1;
   --text-section--letter-spacing: -0.02em;
   --text-section--font-weight: 600;
 
   --text-sub: var(--size-sub);
-  --text-sub--line-height: 1.08;
+  --text-sub--line-height: 1.15;
   --text-sub--letter-spacing: -0.01em;
   --text-sub--font-weight: 600;
 
@@ -72,24 +84,30 @@
   --text-stat--font-weight: 600;
 
   --text-body: var(--size-body);
-  --text-body--line-height: 1.48;
+  --text-body--line-height: 1.55;
   --text-body--font-weight: 400;
 
   --text-small: var(--size-small);
-  --text-small--line-height: 1.47;
+  --text-small--line-height: 1.5;
   --text-small--font-weight: 400;
 
   --text-caption: var(--size-caption);
-  --text-caption--line-height: 1.47;
+  --text-caption--line-height: 1.45;
   --text-caption--font-weight: 400;
 
   --text-footnote: var(--size-footnote);
-  --text-footnote--line-height: 1.47;
+  --text-footnote--line-height: 1.45;
   --text-footnote--font-weight: 400;
 
-  --spacing-section-apple: var(--space-section-apple-y);
+  --text-eyebrow: var(--size-eyebrow);
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.08em;
+  --text-eyebrow--font-weight: 500;
+
+  --spacing-section: var(--space-section-y);
   --max-width-copy: var(--width-copy);
   --max-width-wide: var(--width-wide);
+  --radius-image: var(--radius-image);
 }
 
 @layer base {
@@ -100,15 +118,15 @@
   }
 
   body {
-    background-color: var(--white);
+    background-color: var(--cream);
     color: var(--near-black);
     font-family: var(--font-sans);
     font-size: var(--size-body);
-    line-height: 1.48;
+    line-height: 1.55;
   }
 
   :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--lime);
     outline-offset: 2px;
   }
 
@@ -117,8 +135,8 @@
   }
 }
 
-@utility section-apple {
-  padding-block: var(--space-section-apple-y);
+@utility section-block {
+  padding-block: var(--space-section-y);
 }
 
 @utility max-w-copy {
@@ -129,45 +147,34 @@
   max-width: var(--width-wide);
 }
 
-@utility media-bleed {
-  width: 100vw;
-  margin-inline: calc(50% - 50vw);
+@utility rounded-image {
+  border-radius: var(--radius-image);
 }
 
-@utility image-scrim {
+@utility font-serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+@utility image-scrim-dark {
   background: linear-gradient(
     to bottom,
-    rgb(0 0 0 / 0.55) 0%,
-    rgb(0 0 0 / 0) 45%,
-    rgb(0 0 0 / 0) 55%,
-    rgb(0 0 0 / 0.4) 100%
+    rgb(5 22 18 / 0.7) 0%,
+    rgb(5 22 18 / 0.4) 50%,
+    rgb(5 22 18 / 0.75) 100%
   );
 }
 
-@utility image-tone {
-  filter: saturate(0.9);
-}
-
-@utility viewport-full {
-  min-height: 100dvh;
-}
-
-@utility viewport-third {
-  min-height: 33dvh;
-}
-
-@utility hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
+@utility glass-chip {
+  background: rgb(255 255 255 / 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgb(255 255 255 / 0.18);
 }
 
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(20px);
 }
 
 .scroll-reveal.scroll-reveal-visible {
@@ -178,26 +185,13 @@
     transform 600ms ease-out var(--reveal-delay, 0ms);
 }
 
-.modal-panel {
-  opacity: 0;
-  transform: scale(0.98);
-}
-
-.modal-panel.modal-panel-open {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 300ms ease-out, transform 300ms ease-out;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
   .scroll-reveal,
-  .scroll-reveal.scroll-reveal-visible,
-  .modal-panel,
-  .modal-panel.modal-panel-open {
+  .scroll-reveal.scroll-reveal-visible {
     opacity: 1;
     transform: none;
     transition: none;

@@ -8,7 +8,7 @@ export function BookCallLink({ className = "" }: BookCallLinkProps) {
   return (
     <Link
       href="/book"
-      className={`inline-flex items-center rounded-lg bg-brown px-5 py-2.5 text-small text-white transition-opacity hover:opacity-80 ${className}`}
+      className={`inline-flex items-center rounded-full bg-lime px-5 py-2.5 text-small font-semibold text-forest transition-opacity hover:opacity-85 ${className}`}
     >
       Book a call
     </Link>
