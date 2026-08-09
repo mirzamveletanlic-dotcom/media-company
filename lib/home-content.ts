@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 export const heroContent = {
   headline: "More booked jobs. Period.",
   subline: `Websites and local marketing for trades and clinics in ${siteConfig.city}.`,
-  imageSrc: "/images/hero.svg",
+  imageSrc: "/images/hero.jpg",
   imageAlt: "Contractor answering a call on a job site",
   imageWidth: 1920,
   imageHeight: 1080,
@@ -23,7 +23,7 @@ export const missedCallsContent = {
     "You never know it happened.",
     "That is a booked job, gone.",
   ],
-  imageSrc: "/images/missed-calls.svg",
+  imageSrc: "/images/missed-calls.jpg",
   imageAlt: "Phone showing a missed call notification",
   imageWidth: 1920,
   imageHeight: 1080,
@@ -55,7 +55,7 @@ export const howItWorksSteps = [
     description:
       "We learn what you do, where you work, and what a booked job is worth.",
     timeline: "Day 1",
-    imageSrc: "/images/step-discovery.svg",
+    imageSrc: "/images/step-discovery.jpg",
     imageAlt: "Business owner on a discovery call",
     imageWidth: 1200,
     imageHeight: 900,
@@ -66,7 +66,7 @@ export const howItWorksSteps = [
     description:
       "Copy, design, and SEO in one doc. You approve before anything goes live.",
     timeline: "Days 2–18",
-    imageSrc: "/images/step-build.svg",
+    imageSrc: "/images/step-build.jpg",
     imageAlt: "Website design in progress on a laptop",
     imageWidth: 1200,
     imageHeight: 900,
@@ -77,7 +77,7 @@ export const howItWorksSteps = [
     description:
       "Site goes live. Google profile optimized. Call tracking starts same week.",
     timeline: "Day 21 on average",
-    imageSrc: "/images/step-launch.svg",
+    imageSrc: "/images/step-launch.jpg",
     imageAlt: "Analytics dashboard showing tracked phone calls",
     imageWidth: 1200,
     imageHeight: 900,
@@ -102,10 +102,10 @@ export const finalCtaContent = {
 };
 
 export const beforeAfterContent = {
-  beforeSrc: "/images/before-website.svg",
-  afterSrc: "/images/after-website.svg",
-  beforeAlt: "Cluttered contractor website before redesign",
-  afterAlt: "Clean contractor website after redesign",
+  beforeSrc: "/images/before.jpg",
+  afterSrc: "/images/after.jpg",
+  beforeAlt: "Outdated office before redesign",
+  afterAlt: "Modern workspace after redesign",
   width: 1920,
   height: 1080,
 };
