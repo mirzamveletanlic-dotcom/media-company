@@ -153,6 +153,36 @@
   );
 }
 
+@utility image-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0.55) 0%,
+    rgb(0 0 0 / 0) 45%,
+    rgb(0 0 0 / 0) 55%,
+    rgb(0 0 0 / 0.4) 100%
+  );
+}
+
+@utility image-tone {
+  filter: saturate(0.85) contrast(1.05);
+}
+
+@utility subline {
+  max-width: 600px;
+  margin-inline: auto;
+  font-size: var(--size-h3);
+  line-height: 1.47;
+  color: var(--grey);
+}
+
+@utility viewport-full {
+  min-height: 100dvh;
+}
+
+@utility viewport-third {
+  min-height: 33dvh;
+}
+
 @utility media-bleed {
   width: 100vw;
   margin-inline: calc(50% - 50vw);
@@ -220,6 +250,17 @@
     transform: none;
     transition: none;
   }
+}
+
+/* ─── Film grain (fixed, whole page) ─────────────────────────────────────── */
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
 }
 
 /* ─── Motion ──────────────────────────────────────────────────────────────── */

@@ -3,28 +3,24 @@ import { guarantees } from "@/lib/home-content";
 
 export function GuaranteesSection() {
   return (
-    <section
-      aria-labelledby="guarantees-heading"
-      className="screen-section bg-dark px-6"
-    >
-      <div className="mx-auto w-full max-w-[820px] text-center">
-        <ScrollReveal>
-          <h2 id="guarantees-heading" className="sr-only">
-            Our guarantees
-          </h2>
-          <p className="text-small font-semibold text-grey">Our guarantees</p>
-        </ScrollReveal>
-
-        <ul className="mt-16 space-y-16 md:mt-20 md:space-y-24">
-          {guarantees.map((promise, index) => (
-            <ScrollReveal key={promise} delay={index * 120}>
-              <li>
-                <p className="text-h1 text-white">{promise}</p>
-              </li>
+    <section aria-labelledby="guarantees-heading" className="bg-dark">
+      <h2 id="guarantees-heading" className="sr-only">
+        Our guarantees
+      </h2>
+      <ul>
+        {guarantees.map((promise, index) => (
+          <li
+            key={promise}
+            className="viewport-third flex items-center justify-center px-6"
+          >
+            <ScrollReveal delay={index * 80}>
+              <p className="max-w-[820px] text-center text-h1 text-white">
+                {promise}
+              </p>
             </ScrollReveal>
-          ))}
-        </ul>
-      </div>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

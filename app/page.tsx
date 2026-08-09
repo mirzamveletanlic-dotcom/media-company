@@ -1,29 +1,26 @@
-import { AnswersPreviewSection } from "@/components/home/AnswersPreviewSection";
+import { AnswersSection } from "@/components/home/AnswersSection";
 import { BeforeAfterSection } from "@/components/home/BeforeAfterSection";
 import { FinalCtaSection } from "@/components/home/FinalCtaSection";
+import { GrainOverlay } from "@/components/home/GrainOverlay";
 import { GuaranteesSection } from "@/components/home/GuaranteesSection";
 import { HeroSection } from "@/components/home/HeroSection";
 import { HowItWorksSection } from "@/components/home/HowItWorksSection";
+import { MissedCallsSection } from "@/components/home/MissedCallsSection";
 import { PackageSection } from "@/components/home/PackageSection";
-import { ProblemSection } from "@/components/home/ProblemSection";
-import { ProofBarSection } from "@/components/home/ProofBarSection";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { ProofNumbersSection } from "@/components/home/ProofNumbersSection";
 
 export default function HomePage() {
   return (
     <>
+      <GrainOverlay />
       <HeroSection />
-      <ProofBarSection />
-      <ProblemSection />
+      <ProofNumbersSection />
+      <MissedCallsSection />
+      <BeforeAfterSection />
       <PackageSection />
       <GuaranteesSection />
-
-      <ScrollReveal>
-        <BeforeAfterSection />
-      </ScrollReveal>
-
       <HowItWorksSection />
-      <AnswersPreviewSection />
+      <AnswersSection />
       <FinalCtaSection />
     </>
   );

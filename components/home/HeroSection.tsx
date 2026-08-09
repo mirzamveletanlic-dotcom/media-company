@@ -1,43 +1,33 @@
-import Image from "next/image";
-import Link from "next/link";
-import { BookCallLink } from "@/components/layout/BookCallLink";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { heroContent } from "@/lib/home-content";
+import { HomeTextLink } from "./HomeTextLink";
+import { ImageScrimSection } from "./ImageScrimSection";
 
 export function HeroSection() {
   return (
-    <section
-      aria-label="Introduction"
-      className="relative -mt-16 flex min-h-[100dvh] items-center justify-center overflow-hidden text-center"
+    <ImageScrimSection
+      ariaLabel="Introduction"
+      className="-mt-16"
+      src={heroContent.imageSrc}
+      alt={heroContent.imageAlt}
+      width={heroContent.imageWidth}
+      height={heroContent.imageHeight}
+      priority
     >
-      <Image
-        src={heroContent.imageSrc}
-        alt={heroContent.imageAlt}
-        width={heroContent.imageWidth}
-        height={heroContent.imageHeight}
-        priority
-        sizes="100vw"
-        className="absolute inset-0 h-full w-full scale-105 object-cover"
-      />
-
-      <div className="hero-gradient absolute inset-0" aria-hidden="true" />
-
-      <div className="relative z-10 w-full px-6 pt-20 pb-24 md:pt-16 md:pb-16">
-        <div className="mx-auto max-w-[900px]">
+      <div className="viewport-full flex flex-col items-center justify-center px-6 text-center">
+        <ScrollReveal>
           <h1 className="text-display text-white">{heroContent.headline}</h1>
-          <p className="mx-auto mt-6 max-w-[640px] text-h3 font-normal text-white/75">
-            {heroContent.subline}
-          </p>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-            <BookCallLink inverted />
-            <Link
-              href="/pricing"
-              className="inline-flex items-center rounded-full px-5 py-2.5 text-small text-accent transition-opacity hover:opacity-80"
-            >
-              See pricing ›
-            </Link>
+          <p className="subline mt-6 text-h3 text-grey">{heroContent.subline}</p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
+            <HomeTextLink href="/book" light>
+              Book a call
+            </HomeTextLink>
+            <HomeTextLink href="/pricing" light>
+              See pricing
+            </HomeTextLink>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
-    </section>
+    </ImageScrimSection>
   );
 }
