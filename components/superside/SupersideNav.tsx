@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { mainNavLinks } from "@/lib/navigation";
 import { siteConfig } from "@/lib/site-config";
-import { BookCallLink } from "./BookCallLink";
+import { BookCallLink } from "@/components/layout/BookCallLink";
 
 export function SupersideNav() {
   return (
