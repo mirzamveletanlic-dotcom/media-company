@@ -16,11 +16,11 @@ type FeatureBlockProps = {
   imageHeight: number;
   body: string;
   stat?: { value: string; label: string; footnote?: FootnoteId };
-  chips?: { term: string; description: string }[];
+  chips?: ReadonlyArray<{ term: string; description: string }>;
   modal: {
     title: string;
-    deliverables: string[];
-    timeline: { week: string; detail: string }[];
+    deliverables: ReadonlyArray<string>;
+    timeline: ReadonlyArray<{ week: string; detail: string }>;
     price: string;
   };
 };
