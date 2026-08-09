@@ -18,7 +18,7 @@ export function SectionIntro({
   const eyebrowColor = light ? "text-white/60" : "text-grey";
   const lineColor = light ? "bg-white/25" : "bg-hairline";
   const headlineColor = light ? "text-white" : "text-near-black";
-  const serifColor = light ? "text-lime" : "text-forest";
+  const serifColor = light ? "text-white" : "text-forest";
 
   return (
     <header className={className}>

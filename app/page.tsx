@@ -1,29 +1,29 @@
-import { AnswersSection } from "@/components/superside/AnswersSection";
 import { BeforeAfterSection } from "@/components/superside/BeforeAfterSection";
-import { ComparisonSection } from "@/components/superside/ComparisonSection";
+import { FaqSection } from "@/components/superside/FaqSection";
 import { FinalCtaSection } from "@/components/superside/FinalCtaSection";
 import { FootnoteList } from "@/components/superside/FootnoteList";
 import { GlassWorkflowSection } from "@/components/superside/GlassWorkflowSection";
-import { GuaranteesSection } from "@/components/superside/GuaranteesSection";
 import { HeroSection } from "@/components/superside/HeroSection";
 import { HomeNav } from "@/components/superside/HomeNav";
 import { PricingSection } from "@/components/superside/PricingSection";
-import { ProblemSection } from "@/components/superside/ProblemSection";
+import { ProofBar } from "@/components/superside/ProofBar";
 import { ServiceGridSection } from "@/components/superside/ServiceGridSection";
+import { SplitSection } from "@/components/superside/SplitSection";
+import { splitProblem, splitValue } from "@/lib/superside-home-content";
 
 export default function HomePage() {
   return (
     <>
       <HomeNav />
       <HeroSection />
-      <ProblemSection />
+      <SplitSection {...splitProblem} />
       <ServiceGridSection />
       <GlassWorkflowSection />
+      <ProofBar />
+      <SplitSection {...splitValue} showCta />
       <PricingSection />
-      <GuaranteesSection />
       <BeforeAfterSection />
-      <ComparisonSection />
-      <AnswersSection />
+      <FaqSection />
       <FinalCtaSection />
       <FootnoteList />
     </>

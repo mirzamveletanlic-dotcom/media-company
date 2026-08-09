@@ -1,7 +1,7 @@
 import { siteConfig } from "@/lib/site-config";
 
 export const IMAGE_BLUR =
-  "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%23d8d0c4'/%3E%3C/svg%3E";
+  "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%23ddd6cc'/%3E%3C/svg%3E";
 
 export const footnotes = {
   1: "Based on call-tracking data across 12 active clients, Jan–Dec 2025.",
@@ -14,35 +14,37 @@ export const footnotes = {
 
 export type FootnoteId = keyof typeof footnotes;
 
+/* ─── 1. Hero — full-bleed photo ─────────────────────────────────────────── */
+
 export const hero = {
   eyebrow: "PRICING MODEL",
   headlineLines: ["Take leads from", "invisible to booked"] as const,
   headlineSerif: "3x faster.",
   bodyBefore: `[BRAND] offers website, SEO, social, and video for trades and clinics in ${siteConfig.city} — `,
   bodyLink: { text: "with published pricing.", href: "/pricing" },
-  bodyAfter:
-    " One team handles everything. Live in 21 days on average. $497/month.",
-  imageSrc: "/images/hero.jpg",
-  imageAlt: "Team reviewing marketing results",
-  imageWidth: 1920,
-  imageHeight: 1272,
+  bodyAfter: " One team. Live in 21 days. $497/month.",
+  imageSrc: "/images/step-discovery.jpg",
+  imageAlt: "Team planning local marketing",
+  imageWidth: 1200,
+  imageHeight: 800,
 } as const;
 
-export const problem = {
-  eyebrow: "THE PROBLEM",
+/* ─── 2. Split — cream, image right ──────────────────────────────────────── */
+
+export const splitProblem = {
+  id: "problem",
+  eyebrow: "THE LEAK",
   headlineBefore: "Missing jobs ",
   headlineSerif: "every week",
-  stats: [
-    { value: "62%", label: "Callers who hang up on voicemail", footnote: 1 as FootnoteId },
-    { value: "3", label: "Spots in the Google map pack", footnote: 2 as FootnoteId },
-    { value: "75%", label: "People who judge you by your website", footnote: 3 as FootnoteId },
-  ],
-  body: `Missed calls go to your competitor. When the phone rolls to voicemail on a job site, most callers never leave a message. If you are not in the map pack, you are invisible for the searches that book the most work.`,
+  body: "Missed calls go to your competitor. When the phone rolls to voicemail on a job site, most callers never leave a message. If you are not in the map pack, you are invisible for the searches that book the most work.",
   imageSrc: "/images/missed-calls.jpg",
   imageAlt: "Contractor missing a call on a job site",
   imageWidth: 1920,
   imageHeight: 1280,
+  imageFirst: false,
 } as const;
+
+/* ─── 3. Service grid header ─────────────────────────────────────────────── */
 
 export const servicesSection = {
   eyebrow: "SERVICES",
@@ -54,7 +56,7 @@ export const serviceCards = [
   {
     id: "websites",
     title: "Websites that book calls",
-    description: "Mobile-first. Click-to-call above the fold. Copy written for one goal. Live in 21 days.",
+    description: "Mobile-first. Click-to-call above the fold. Live in 21 days.",
     imageSrc: "/images/step-build.jpg",
     imageAlt: "Website design on a laptop",
     imageWidth: 1200,
@@ -65,9 +67,9 @@ export const serviceCards = [
   {
     id: "google",
     title: "Local SEO",
-    description: "Google Business Profile, citations, review requests, and monthly ranking reports.",
+    description: "Google Business Profile, citations, and review requests.",
     imageSrc: "/images/missed-calls.jpg",
-    imageAlt: "Local search results on a phone",
+    imageAlt: "Local search on a phone",
     imageWidth: 1920,
     imageHeight: 1280,
     descriptionPosition: "below-title" as const,
@@ -76,9 +78,9 @@ export const serviceCards = [
   {
     id: "social",
     title: "Social media",
-    description: "Eight on-brand posts per month. We edit your job-site photos and write every caption.",
+    description: "Eight on-brand posts per month. We write and design every one.",
     imageSrc: "/images/step-discovery.jpg",
-    imageAlt: "Team planning social content",
+    imageAlt: "Team planning content",
     imageWidth: 1200,
     imageHeight: 800,
     descriptionPosition: "below-title" as const,
@@ -87,7 +89,7 @@ export const serviceCards = [
   {
     id: "video",
     title: "Video production",
-    description: "Quarterly shoots. Before/after reveals, walkthroughs, and testimonials for every channel.",
+    description: "Quarterly shoots. Before/after reveals and walkthroughs.",
     imageSrc: "/images/hero.jpg",
     imageAlt: "Trade work in progress",
     imageWidth: 1920,
@@ -98,7 +100,7 @@ export const serviceCards = [
   {
     id: "branding",
     title: "Branding",
-    description: "Logo files, colours, fonts, and templates. One look from your van to your website.",
+    description: "Logo, colours, fonts, and templates. One look everywhere.",
     imageSrc: "/images/after.jpg",
     imageAlt: "Professional brand presentation",
     imageWidth: 1920,
@@ -109,9 +111,9 @@ export const serviceCards = [
   {
     id: "tracking",
     title: "Call tracking",
-    description: "Know which calls become jobs. Monthly reports on calls, forms, and map rankings.",
+    description: "Know which calls become jobs. Monthly ranking reports.",
     imageSrc: "/images/step-launch.jpg",
-    imageAlt: "Analytics dashboard review",
+    imageAlt: "Analytics review",
     imageWidth: 1200,
     imageHeight: 800,
     descriptionPosition: "bottom" as const,
@@ -119,11 +121,13 @@ export const serviceCards = [
   },
 ] as const;
 
+/* ─── 4. Glass workflow — full-bleed ─────────────────────────────────────── */
+
 export const workflowSection = {
   eyebrow: "HOW WE WORK",
-  headlineBefore: "Three steps to ",
-  headlineSerif: "live and tracking",
-  body: "You stay on the job site. We handle discovery, build, and launch — then report the numbers every month.",
+  headlineBefore: "Local marketing guided by ",
+  headlineSerif: "industry experts",
+  body: "Discovery, build, and launch — handled for you while you stay on the job site. Then we report the numbers every month.",
   imageSrc: "/images/hero.jpg",
   imageWidth: 1920,
   imageHeight: 1272,
@@ -131,7 +135,7 @@ export const workflowSection = {
     {
       icon: "clipboard" as const,
       label: "Discovery",
-      description: "15-minute call. We learn your trade, service area, and what a booked job is worth.",
+      description: "15-minute call. We learn your trade, area, and what a booked job is worth.",
     },
     {
       icon: "sparkle" as const,
@@ -146,9 +150,42 @@ export const workflowSection = {
   ],
 } as const;
 
+/* ─── 5. Proof bar ───────────────────────────────────────────────────────── */
+
+export const proofBar = {
+  stats: [
+    { value: "21", label: "Days to live site", footnote: 6 as FootnoteId },
+    { value: "$497", label: "Flat monthly price" },
+    { value: "62%", label: "Callers lost to voicemail", footnote: 1 as FootnoteId },
+    { value: "30", label: "Day launch guarantee", footnote: 4 as FootnoteId },
+  ],
+} as const;
+
+/* ─── 6. Split — cream, image left ───────────────────────────────────────── */
+
+export const splitValue = {
+  id: "why-us",
+  eyebrow: "HASSLE-FREE HELP",
+  headlineBefore: "Big-agency output, ",
+  headlineSerif: "without the overhead",
+  body: "One subscription covers your website, local SEO, social, video, and reporting. No juggling vendors. No surprise invoices.",
+  bullets: [
+    "Live in 30 days or we keep working free",
+    "You own your site, domain, and ad accounts",
+    "Monthly numbers — calls, forms, and rankings",
+  ],
+  imageSrc: "/images/step-build.jpg",
+  imageAlt: "Marketing team at work",
+  imageWidth: 1200,
+  imageHeight: 799,
+  imageFirst: true,
+} as const;
+
+/* ─── 7. Pricing — full-bleed photo ──────────────────────────────────────── */
+
 export const pricing = {
   eyebrow: "PRICING",
-  headlineBefore: "$497/month. ",
+  headlineBefore: "One price. ",
   headlineSerif: "Published online.",
   price: 497,
   includes: [
@@ -159,88 +196,37 @@ export const pricing = {
     "Quarterly video shoot",
     "Monthly report — calls and rankings",
   ],
-  body: `No setup fee. No surprise invoices. Cancel with 30 days notice — you keep your site and domain.`,
+  body: "No setup fee. Cancel with 30 days notice — you keep your site and domain.",
+  imageSrc: "/images/missed-calls.jpg",
+  imageWidth: 1920,
+  imageHeight: 1280,
 } as const;
 
-export const guarantees = {
-  eyebrow: "GUARANTEES",
-  headlineBefore: "Promises we ",
-  headlineSerif: "actually keep",
-  items: [
-    {
-      claim: "Live in 30 days or we keep working free.",
-      detail: "When you provide copy and assets within 5 business days.",
-      footnote: 4 as FootnoteId,
-    },
-    {
-      claim: "One flat price. No surprise invoices.",
-      detail: "$497/month. Everything listed. Nothing hidden.",
-    },
-    {
-      claim: "You own your site and ad accounts.",
-      detail: "Domain, hosting credentials, and ad access — always yours.",
-    },
-    {
-      claim: "Monthly numbers, not vanity metrics.",
-      detail: "Calls, form fills, and map rankings. Every report.",
-    },
-  ],
-} as const;
+/* ─── 8. Before / after ──────────────────────────────────────────────────── */
 
 export const beforeAfter = {
-  eyebrow: "RESULTS",
+  eyebrow: "PROOF",
   headlineBefore: "Before and ",
   headlineSerif: "after",
   beforeSrc: "/images/before.jpg",
   afterSrc: "/images/after.jpg",
-  beforeAlt: "Contractor website before redesign",
-  afterAlt: "Contractor website after redesign",
+  beforeAlt: "Website before redesign",
+  afterAlt: "Website after redesign",
   width: 1920,
   height: 1282,
 } as const;
 
-export const comparison = {
-  eyebrow: "WHY US",
+/* ─── 9. FAQ + comparison ────────────────────────────────────────────────── */
+
+export const faqSection = {
+  eyebrow: "ANSWERS",
   headlineBefore: "Compared ",
   headlineSerif: "honestly",
-  tiles: [
-    {
-      title: "[BRAND]",
-      highlight: true,
-      items: [
-        "$497/month, published online",
-        "Live in 21 days on average",
-        "One team: site, SEO, social, video",
-        "You own everything we build",
-      ],
-    },
-    {
-      title: "Typical agency",
-      highlight: false,
-      items: [
-        "$3,000–$8,000 upfront, then retainers",
-        "8–16 week timelines common",
-        "Separate vendors for site, SEO, ads",
-        "Agency owns the CMS and ad accounts",
-      ],
-    },
-    {
-      title: "Do it yourself",
-      highlight: false,
-      items: [
-        "Squarespace/Wix: $30–$50/month",
-        "Your evenings and weekends",
-        "No SEO, no tracking, no strategy",
-        "Looks like every other template site",
-      ],
-    },
+  comparison: [
+    { label: "[BRAND]", detail: "$497/mo · live in 21 days · you own everything" },
+    { label: "Typical agency", detail: "$3k–8k upfront · 8–16 weeks · they own the CMS" },
+    { label: "Do it yourself", detail: "$30–50/mo · your weekends · no SEO or tracking" },
   ],
-} as const;
-
-export const answers = {
-  eyebrow: "ANSWERS",
-  headlineBefore: "Straight ",
-  headlineSerif: "answers",
   items: [
     { question: "How much does a website cost?", href: "/faq#website-cost" },
     { question: "How long does a site take to build?", href: "/faq#timeline" },
@@ -248,6 +234,8 @@ export const answers = {
     { question: "Do you work with HVAC companies?", href: "/faq#trades" },
   ],
 } as const;
+
+/* ─── 10. Final CTA ──────────────────────────────────────────────────────── */
 
 export const finalCta = {
   headlineBefore: "Stop losing jobs ",

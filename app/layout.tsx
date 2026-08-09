@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Inter } from "next/font/google";
+import { Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
 import { ConditionalSiteHeader } from "@/components/layout/ConditionalSiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SkipToContent } from "@/components/layout/SkipToContent";
 import "./globals.css";
 
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-jakarta",
 });
 
 const instrumentSerif = Instrument_Serif({
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
+    <html lang="en" className={`${jakarta.variable} ${instrumentSerif.variable}`}>
       <body className="bg-cream font-sans text-near-black antialiased">
         <SkipToContent />
         <ConditionalSiteHeader />

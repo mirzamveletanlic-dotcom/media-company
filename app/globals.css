@@ -1,49 +1,49 @@
 @import "tailwindcss";
 
-/* ─── Superside design tokens ─────────────────────────────────────────────── */
+/* ─── Superside-matched tokens ────────────────────────────────────────────── */
 
 :root {
-  --cream: #f5f0e8;
-  --forest: #0a1f1a;
-  --forest-deep: #051612;
-  --sage: #2d4f44;
-  --lime: #d4ff5c;
+  --cream: #f7f4ef;
+  --forest: #0a1f1c;
+  --forest-deep: #061512;
+  --sage: #2a4a40;
+  --lime: #c8f05a;
   --near-black: #1a1a1a;
-  --grey: #6b6b6b;
-  --hairline: #d8d0c4;
+  --grey: #6f6f6f;
+  --hairline: #ddd6cc;
   --white: #ffffff;
 
-  --size-display: 44px;
-  --size-section: 32px;
+  --size-display: 40px;
+  --size-section: 30px;
   --size-sub: 20px;
-  --size-stat: 36px;
+  --size-stat: 34px;
   --size-body: 17px;
   --size-small: 15px;
   --size-caption: 12px;
   --size-footnote: 11px;
   --size-eyebrow: 11px;
 
-  --space-section-y: 80px;
-  --width-copy: 540px;
-  --width-wide: 1180px;
-  --radius-card: 20px;
-  --nav-height: 64px;
+  --space-section-y: 88px;
+  --width-copy: 520px;
+  --width-wide: 1200px;
+  --radius-card: 22px;
+  --nav-height: 68px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   :root {
-    --size-display: 72px;
-    --size-section: 44px;
-    --size-sub: 24px;
-    --size-stat: 52px;
-    --size-body: 18px;
+    --size-display: 80px;
+    --size-section: 48px;
+    --size-sub: 26px;
+    --size-stat: 56px;
+    --size-body: 19px;
     --size-small: 16px;
     --size-caption: 13px;
     --size-footnote: 12px;
     --size-eyebrow: 12px;
-    --space-section-y: 128px;
-    --radius-card: 24px;
-    --nav-height: 72px;
+    --space-section-y: 140px;
+    --radius-card: 26px;
+    --nav-height: 76px;
   }
 }
 
@@ -58,31 +58,31 @@
   --color-hairline: var(--hairline);
   --color-white: var(--white);
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
 
   --text-display: var(--size-display);
-  --text-display--line-height: 1.05;
-  --text-display--letter-spacing: -0.03em;
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.035em;
   --text-display--font-weight: 600;
 
   --text-section: var(--size-section);
-  --text-section--line-height: 1.1;
-  --text-section--letter-spacing: -0.02em;
+  --text-section--line-height: 1.08;
+  --text-section--letter-spacing: -0.025em;
   --text-section--font-weight: 600;
 
   --text-sub: var(--size-sub);
-  --text-sub--line-height: 1.2;
-  --text-sub--letter-spacing: -0.01em;
+  --text-sub--line-height: 1.15;
+  --text-sub--letter-spacing: -0.015em;
   --text-sub--font-weight: 600;
 
   --text-stat: var(--size-stat);
-  --text-stat--line-height: 1.05;
-  --text-stat--letter-spacing: -0.02em;
+  --text-stat--line-height: 1;
+  --text-stat--letter-spacing: -0.03em;
   --text-stat--font-weight: 600;
 
   --text-body: var(--size-body);
-  --text-body--line-height: 1.6;
+  --text-body--line-height: 1.65;
   --text-body--font-weight: 400;
 
   --text-small: var(--size-small);
@@ -99,12 +99,8 @@
 
   --text-eyebrow: var(--size-eyebrow);
   --text-eyebrow--line-height: 1.4;
-  --text-eyebrow--letter-spacing: 0.1em;
+  --text-eyebrow--letter-spacing: 0.12em;
   --text-eyebrow--font-weight: 500;
-
-  --spacing-section: var(--space-section-y);
-  --max-width-copy: var(--width-copy);
-  --max-width-wide: var(--width-wide);
 }
 
 @layer base {
@@ -119,7 +115,7 @@
     color: var(--near-black);
     font-family: var(--font-sans);
     font-size: var(--size-body);
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
   :focus-visible {
@@ -141,9 +137,16 @@
 }
 
 @utility section-inner {
-  margin-inline: auto;
+  width: 100%;
   max-width: var(--width-wide);
+  margin-inline: auto;
   padding-inline: 24px;
+}
+
+@media (min-width: 1024px) {
+  .section-inner {
+    padding-inline: 40px;
+  }
 }
 
 @utility max-w-copy {
@@ -156,57 +159,52 @@
   font-weight: 400;
 }
 
-@utility hero-scrim {
-  background: linear-gradient(
-    to right,
-    rgb(5 22 18 / 0.88) 0%,
-    rgb(5 22 18 / 0.72) 40%,
-    rgb(5 22 18 / 0.35) 65%,
-    rgb(5 22 18 / 0.15) 100%
-  );
-}
-
 @utility nav-bar-gradient {
   background: linear-gradient(
     to bottom,
-    rgb(10 31 26 / 1) 0%,
-    rgb(10 31 26 / 0.88) 45%,
-    rgb(10 31 26 / 0.45) 75%,
-    rgb(10 31 26 / 0) 100%
+    rgb(10 31 28 / 0.92) 0%,
+    rgb(10 31 28 / 0.65) 55%,
+    rgb(10 31 28 / 0) 100%
+  );
+}
+
+@utility hero-scrim {
+  background: linear-gradient(
+    to right,
+    rgb(6 21 18 / 0.9) 0%,
+    rgb(6 21 18 / 0.75) 38%,
+    rgb(6 21 18 / 0.35) 62%,
+    rgb(6 21 18 / 0.12) 100%
   );
 }
 
 @utility glass-chip {
   background: rgb(255 255 255 / 0.1);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgb(255 255 255 / 0.16);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgb(255 255 255 / 0.14);
 }
 
 @utility card-scrim {
   background: linear-gradient(
-    to bottom,
-    rgb(0 0 0 / 0.55) 0%,
-    rgb(0 0 0 / 0.2) 45%,
-    rgb(0 0 0 / 0.55) 100%
+    180deg,
+    rgb(0 0 0 / 0.62) 0%,
+    rgb(0 0 0 / 0.18) 42%,
+    rgb(0 0 0 / 0.58) 100%
   );
-}
-
-@utility bleed-scrim-left {
-  background: linear-gradient(to right, var(--forest) 0%, transparent 100%);
 }
 
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(14px);
 }
 
 .scroll-reveal.scroll-reveal-visible {
   opacity: 1;
   transform: translateY(0);
   transition:
-    opacity 600ms ease-out var(--reveal-delay, 0ms),
-    transform 600ms ease-out var(--reveal-delay, 0ms);
+    opacity 650ms ease-out var(--reveal-delay, 0ms),
+    transform 650ms ease-out var(--reveal-delay, 0ms);
 }
 
 @media (prefers-reduced-motion: reduce) {
