@@ -81,7 +81,7 @@ export function BeforeAfterSlider({
       >
         <Image
           src={afterSrc}
-          alt=""
+          alt={afterAlt}
           width={width}
           height={height}
           loading="lazy"

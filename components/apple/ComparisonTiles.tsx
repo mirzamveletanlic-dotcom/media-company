@@ -1,12 +1,12 @@
 type Tile = {
   title: string;
   icon: string;
-  items: string[];
+  items: ReadonlyArray<string>;
 };
 
 type ComparisonTilesProps = {
   headline: string;
-  tiles: Tile[];
+  tiles: ReadonlyArray<Tile>;
 };
 
 const icons: Record<string, string> = {

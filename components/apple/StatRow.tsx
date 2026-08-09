@@ -8,7 +8,7 @@ type StatItem = {
 };
 
 type StatRowProps = {
-  stats: StatItem[];
+  stats: ReadonlyArray<StatItem>;
   dark?: boolean;
 };
 

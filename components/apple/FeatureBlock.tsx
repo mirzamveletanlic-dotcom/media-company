@@ -46,7 +46,6 @@ export function FeatureBlock({
   modal,
 }: FeatureBlockProps) {
   const dark = bg === "black";
-  const textClass = dark ? "text-grey" : "text-grey";
 
   const copy = (
     <ScrollReveal className="flex flex-col justify-center px-6 py-12 md:px-12 md:py-16">

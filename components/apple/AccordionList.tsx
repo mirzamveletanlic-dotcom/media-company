@@ -12,7 +12,7 @@ type Step = {
 };
 
 type AccordionListProps = {
-  steps: Step[];
+  steps: ReadonlyArray<Step>;
 };
 
 export function AccordionList({ steps }: AccordionListProps) {

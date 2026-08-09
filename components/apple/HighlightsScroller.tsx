@@ -14,7 +14,7 @@ type HighlightItem = {
 
 type HighlightsScrollerProps = {
   headline: string;
-  items: HighlightItem[];
+  items: ReadonlyArray<HighlightItem>;
 };
 
 export function HighlightsScroller({ headline, items }: HighlightsScrollerProps) {
