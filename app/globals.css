@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+/* ─── Raw design tokens (CSS custom properties) ─────────────────────────── */
+
+:root {
+  /* Colour */
+  --white: #ffffff;
+  --near-black: #1d1d1f;
+  --grey: #86868b;
+  --hairline: #d2d2d7;
+  --dark: #000000;
+  --accent: #0066cc;
+
+  /* Type scale — mobile first */
+  --size-display: 40px;
+  --size-h1: 32px;
+  --size-h2: 24px;
+  --size-h3: 19px;
+  --size-body: 17px;
+  --size-small: 13px;
+
+  /* Spacing */
+  --space-section-y: 64px;
+  --width-text: 980px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    /* Type scale — desktop */
+    --size-display: 76px;
+    --size-h1: 48px;
+    --size-h2: 32px;
+    --size-h3: 21px;
+    --size-body: 17px;
+    --size-small: 14px;
+
+    /* Spacing */
+    --space-section-y: 120px;
+  }
+}
+
+/* ─── Tailwind theme tokens ─────────────────────────────────────────────── */
+
+@theme {
+  /* Colours → bg-white, text-near-black, border-hairline, etc. */
+  --color-white: var(--white);
+  --color-near-black: var(--near-black);
+  --color-grey: var(--grey);
+  --color-hairline: var(--hairline);
+  --color-dark: var(--dark);
+  --color-accent: var(--accent);
+
+  /* Font family → font-sans */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Type scale → text-display, text-h1, text-h2, text-h3, text-body, text-small */
+  --text-display: var(--size-display);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 600;
+
+  --text-h1: var(--size-h1);
+  --text-h1--line-height: 1.05;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h1--font-weight: 600;
+
+  --text-h2: var(--size-h2);
+  --text-h2--line-height: 1.05;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 600;
+
+  --text-h3: var(--size-h3);
+  --text-h3--line-height: 1.05;
+  --text-h3--letter-spacing: -0.02em;
+  --text-h3--font-weight: 600;
+
+  --text-body: var(--size-body);
+  --text-body--line-height: 1.47;
+  --text-body--font-weight: 400;
+
+  --text-small: var(--size-small);
+  --text-small--line-height: 1.47;
+  --text-small--font-weight: 400;
+
+  /* Spacing → py-section, pt-section, gap-section, etc. */
+  --spacing-section: var(--space-section-y);
+
+  /* Layout → max-w-text */
+  --max-width-text: var(--width-text);
+}
+
+/* ─── Base styles ─────────────────────────────────────────────────────────── */
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--white);
+    color: var(--near-black);
+    font-family: var(--font-sans);
+    font-size: var(--size-body);
+    font-weight: 400;
+    line-height: 1.47;
+  }
+
+  /* Visible keyboard focus everywhere */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+/* ─── Layout utilities ────────────────────────────────────────────────────── */
+
+@utility text-prose {
+  max-width: var(--width-text);
+  margin-inline: auto;
+}
+
+@utility section-padding {
+  padding-block: var(--space-section-y);
+}
+
+@utility media-bleed {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+/* ─── Mobile nav motion ───────────────────────────────────────────────────── */
+
+@keyframes overlay-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes link-stagger-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mobile-nav-overlay {
+    animation: overlay-fade-in 300ms ease forwards;
+  }
+
+  .mobile-nav-link {
+    opacity: 0;
+    animation: link-stagger-up 400ms ease forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav-link {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ─── Scroll reveal ───────────────────────────────────────────────────────── */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.scroll-reveal.scroll-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 600ms ease-out var(--reveal-delay, 0ms),
+    transform 600ms ease-out var(--reveal-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal.scroll-reveal-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ─── Motion ──────────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
