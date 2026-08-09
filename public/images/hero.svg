@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Contractor on a job site">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3d3d40"/>
+      <stop offset="100%" stop-color="#1d1d1f"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2a2a2c"/>
+      <stop offset="100%" stop-color="#1a1a1c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <rect y="680" width="1920" height="400" fill="url(#ground)"/>
+  <rect x="980" y="420" width="620" height="380" fill="#2c2c2e" opacity="0.85"/>
+  <rect x="1020" y="500" width="180" height="120" fill="#48484a" opacity="0.6"/>
+  <rect x="1240" y="500" width="180" height="120" fill="#48484a" opacity="0.6"/>
+  <rect x="1460" y="560" width="100" height="240" fill="#3a3a3c"/>
+  <circle cx="420" cy="760" r="120" fill="#48484a" opacity="0.35"/>
+  <rect x="280" y="560" width="280" height="24" rx="12" fill="#636366" opacity="0.5"/>
+</svg>

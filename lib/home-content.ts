@@ -3,8 +3,10 @@ import { siteConfig } from "@/lib/site-config";
 export const heroContent = {
   headline: "More booked jobs from the phone and Google.",
   subline: `Websites and local marketing for trades, clinics, and restaurants in ${siteConfig.city}.`,
-  videoSrc: "/videos/hero.mp4",
-  posterSrc: "/images/hero-poster.svg",
+  imageSrc: "/images/hero.svg",
+  imageAlt: "Contractor reviewing leads on a job site",
+  imageWidth: 1920,
+  imageHeight: 1080,
 };
 
 export const proofStats = [

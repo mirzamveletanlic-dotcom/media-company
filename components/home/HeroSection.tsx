@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { BookCallLink } from "@/components/layout/BookCallLink";
 import { heroContent } from "@/lib/home-content";
@@ -8,17 +9,15 @@ export function HeroSection() {
       aria-label="Introduction"
       className="relative -mt-16 flex min-h-[100dvh] items-center justify-center overflow-hidden text-center"
     >
-      <video
+      <Image
+        src={heroContent.imageSrc}
+        alt={heroContent.imageAlt}
+        width={heroContent.imageWidth}
+        height={heroContent.imageHeight}
+        priority
+        sizes="100vw"
         className="absolute inset-0 h-full w-full scale-105 object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-        poster={heroContent.posterSrc}
-      >
-        <source src={heroContent.videoSrc} type="video/mp4" />
-      </video>
+      />
 
       <div className="hero-gradient absolute inset-0" aria-hidden="true" />
 
