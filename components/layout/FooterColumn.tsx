@@ -11,7 +11,7 @@ export function FooterColumn({ title, links }: FooterColumnProps) {
     <section aria-labelledby={title.toLowerCase().replace(/\s+/g, "-")}>
       <h2
         id={title.toLowerCase().replace(/\s+/g, "-")}
-        className="text-small font-semibold text-near-black"
+        className="text-small font-semibold text-brown"
       >
         {title}
       </h2>
@@ -20,7 +20,7 @@ export function FooterColumn({ title, links }: FooterColumnProps) {
           <li key={link.href}>
             <Link
               href={link.href}
-              className="text-small text-grey transition-opacity hover:text-near-black hover:opacity-80"
+              className="text-small text-grey transition-opacity hover:text-brown hover:opacity-80"
             >
               {link.label}
             </Link>

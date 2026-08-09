@@ -6,7 +6,7 @@ export function FinalCtaSection() {
   return (
     <section
       aria-labelledby="final-cta-heading"
-      className="viewport-full flex items-center justify-center bg-dark px-6 text-center"
+      className="viewport-full flex items-center justify-center bg-brown px-6 text-center"
     >
       <div className="mx-auto max-w-[900px]">
         <ScrollReveal>

@@ -3,7 +3,7 @@ import { HowItWorksBand } from "./HowItWorksBand";
 
 export function HowItWorksSection() {
   return (
-    <section aria-labelledby="how-it-works-heading" className="bg-white">
+    <section aria-labelledby="how-it-works-heading" className="bg-cream">
       <h2 id="how-it-works-heading" className="sr-only">
         How it works
       </h2>

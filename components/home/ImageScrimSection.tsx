@@ -25,19 +25,27 @@ export function ImageScrimSection({
   return (
     <section
       aria-label={ariaLabel}
-      className={`relative viewport-full overflow-hidden ${className}`.trim()}
+      className={`viewport-full flex flex-col justify-end bg-cream px-6 py-16 md:py-24 ${className}`.trim()}
     >
-      <div className="absolute inset-0" aria-hidden="true">
-        <FullBleedImage
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          priority={priority}
-        />
+      <div className="relative mx-auto mb-10 w-full max-w-[1100px] md:mb-14">
+        <div className="image-rounded relative aspect-[16/10] w-full">
+          <FullBleedImage
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            priority={priority}
+            className="rounded-2xl md:rounded-3xl"
+          />
+          <div
+            className="image-scrim absolute inset-0 rounded-2xl md:rounded-3xl"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 flex flex-col justify-end rounded-2xl p-8 md:rounded-3xl md:p-12">
+            {children}
+          </div>
+        </div>
       </div>
-      <div className="image-scrim absolute inset-0" aria-hidden="true" />
-      <div className="relative z-10 flex min-h-[100dvh] flex-col">{children}</div>
     </section>
   );
 }

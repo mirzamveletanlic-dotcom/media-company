@@ -6,11 +6,11 @@ export function PackageSection() {
   return (
     <section
       aria-labelledby="package-heading"
-      className="viewport-full flex items-center bg-white px-6"
+      className="viewport-full flex items-center bg-cream px-6"
     >
       <div className="mx-auto w-full max-w-[680px] text-center">
         <ScrollReveal>
-          <h2 id="package-heading" className="text-display text-near-black">
+          <h2 id="package-heading" className="text-display text-brown">
             {packageContent.headline}
           </h2>
         </ScrollReveal>
@@ -18,7 +18,7 @@ export function PackageSection() {
         <ScrollReveal delay={100}>
           <ul className="mt-16 space-y-5">
             {packageContent.items.map((item) => (
-              <li key={item} className="text-body text-near-black">
+              <li key={item} className="text-body text-brown">
                 {item}
               </li>
             ))}
@@ -26,7 +26,7 @@ export function PackageSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={180}>
-          <p className="mt-20 text-display text-near-black">
+          <p className="mt-20 text-display text-brown">
             ${packageContent.monthlyPrice}
             <span className="text-h3 font-normal text-grey">/month</span>
           </p>

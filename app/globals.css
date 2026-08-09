@@ -3,13 +3,18 @@
 /* ─── Raw design tokens (CSS custom properties) ─────────────────────────── */
 
 :root {
-  /* Colour */
+  /* Colour — warm palette */
   --white: #ffffff;
-  --near-black: #1d1d1f;
-  --grey: #86868b;
-  --hairline: #d2d2d7;
-  --dark: #000000;
-  --accent: #0066cc;
+  --cream: #faf8f4;
+  --brown: #331e1f;
+  --near-black: #331e1f;
+  --grey: #7a6a62;
+  --hairline: #dbd3c8;
+  --mid-beige: #eae3dc;
+  --dark-beige: #dbd3c8;
+  --dark: #331e1f;
+  --accent: #9d745a;
+  --bronze: #9d745a;
 
   /* Type scale — mobile first */
   --size-display: 40px;
@@ -46,14 +51,20 @@
 @theme {
   /* Colours → bg-white, text-near-black, border-hairline, etc. */
   --color-white: var(--white);
+  --color-cream: var(--cream);
+  --color-brown: var(--brown);
   --color-near-black: var(--near-black);
   --color-grey: var(--grey);
   --color-hairline: var(--hairline);
+  --color-mid-beige: var(--mid-beige);
+  --color-dark-beige: var(--dark-beige);
   --color-dark: var(--dark);
   --color-accent: var(--accent);
+  --color-bronze: var(--bronze);
 
-  /* Font family → font-sans */
+  /* Font family → font-sans, font-serif */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
 
   /* Type scale → text-display, text-h1, text-h2, text-h3, text-body, text-small */
   --text-display: var(--size-display);
@@ -101,8 +112,8 @@
   }
 
   body {
-    background-color: var(--white);
-    color: var(--near-black);
+    background-color: var(--cream);
+    color: var(--brown);
     font-family: var(--font-sans);
     font-size: var(--size-body);
     font-weight: 400;
@@ -164,7 +175,18 @@
 }
 
 @utility image-tone {
-  filter: saturate(0.85) contrast(1.05);
+  filter: saturate(0.92) contrast(1.02);
+}
+
+@utility image-rounded {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+@utility font-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
 }
 
 @utility subline {

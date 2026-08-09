@@ -10,7 +10,7 @@ import {
 } from "react";
 
 const BLUR =
-  "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%23d2d2d7'/%3E%3C/svg%3E";
+  "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%23dbd3c8'/%3E%3C/svg%3E";
 
 type BeforeAfterSliderProps = {
   beforeSrc: string;
@@ -78,10 +78,14 @@ export function BeforeAfterSlider({
     }
   };
 
-  const imageClass = "image-tone absolute inset-0 h-full w-full object-cover";
+  const imageClass =
+    "image-tone absolute inset-0 h-full w-full rounded-2xl object-cover md:rounded-3xl";
 
   return (
-    <div ref={trackRef} className="relative h-full min-h-[inherit] w-full select-none">
+    <div
+      ref={trackRef}
+      className="relative aspect-[16/10] w-full select-none overflow-hidden rounded-2xl md:rounded-3xl"
+    >
       <Image
         src={beforeSrc}
         alt={beforeAlt}
@@ -90,12 +94,12 @@ export function BeforeAfterSlider({
         loading="lazy"
         placeholder="blur"
         blurDataURL={BLUR}
-        sizes="100vw"
+        sizes="(max-width: 1100px) 100vw, 1100px"
         className={imageClass}
       />
 
       <div
-        className="absolute inset-0 overflow-hidden"
+        className="absolute inset-0 overflow-hidden rounded-2xl md:rounded-3xl"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
         aria-hidden="true"
       >
@@ -107,7 +111,7 @@ export function BeforeAfterSlider({
           loading="lazy"
           placeholder="blur"
           blurDataURL={BLUR}
-          sizes="100vw"
+          sizes="(max-width: 1100px) 100vw, 1100px"
           className={imageClass}
         />
       </div>
@@ -126,7 +130,7 @@ export function BeforeAfterSlider({
         aria-valuemax={100}
         aria-valuenow={Math.round(position)}
         aria-valuetext={`${Math.round(position)} percent after`}
-        className="absolute top-1/2 z-10 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white bg-dark/70"
+        className="absolute top-1/2 z-10 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white bg-brown/80"
         style={{ left: `${position}%` }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}

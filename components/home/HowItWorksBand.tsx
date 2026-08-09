@@ -26,19 +26,21 @@ export function HowItWorksBand({
   imageFirst,
   dark,
 }: HowItWorksBandProps) {
-  const textBg = dark ? "bg-dark" : "bg-white";
-  const headlineColor = dark ? "text-white" : "text-near-black";
-  const bodyColor = dark ? "text-grey" : "text-grey";
-  const timelineColor = dark ? "text-white" : "text-near-black";
+  const textBg = dark ? "bg-brown" : "bg-cream";
+  const headlineColor = dark ? "text-white" : "text-brown";
+  const timelineColor = dark ? "text-white" : "text-brown";
 
   const imageCell = (
-    <div className="relative min-h-[50dvh] md:min-h-[80dvh]">
-      <FullBleedImage
-        src={imageSrc}
-        alt={imageAlt}
-        width={imageWidth}
-        height={imageHeight}
-      />
+    <div className="flex min-h-[50dvh] items-center justify-center bg-cream p-6 md:min-h-[80dvh] md:p-10">
+      <div className="image-rounded relative aspect-[4/3] w-full max-w-[520px]">
+        <FullBleedImage
+          src={imageSrc}
+          alt={imageAlt}
+          width={imageWidth}
+          height={imageHeight}
+          className="rounded-2xl"
+        />
+      </div>
     </div>
   );
 
@@ -49,7 +51,7 @@ export function HowItWorksBand({
       <ScrollReveal className="max-w-[480px] text-center md:text-left">
         <p className="text-small font-semibold text-grey">Step {step}</p>
         <h3 className={`mt-4 text-h1 ${headlineColor}`}>{title}</h3>
-        <p className={`mt-5 text-body ${bodyColor}`}>{description}</p>
+        <p className="mt-5 text-body text-grey">{description}</p>
         <p className={`mt-8 text-small font-semibold ${timelineColor}`}>
           {timeline}
         </p>

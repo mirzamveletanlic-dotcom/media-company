@@ -5,16 +5,18 @@ export function BeforeAfterSection() {
   return (
     <section
       aria-label="Before and after website comparison"
-      className="media-bleed viewport-full overflow-hidden"
+      className="viewport-full flex items-center bg-cream px-6 py-16"
     >
-      <BeforeAfterSlider
-        beforeSrc={beforeAfterContent.beforeSrc}
-        afterSrc={beforeAfterContent.afterSrc}
-        beforeAlt={beforeAfterContent.beforeAlt}
-        afterAlt={beforeAfterContent.afterAlt}
-        width={beforeAfterContent.width}
-        height={beforeAfterContent.height}
-      />
+      <div className="image-rounded mx-auto w-full max-w-[1100px]">
+        <BeforeAfterSlider
+          beforeSrc={beforeAfterContent.beforeSrc}
+          afterSrc={beforeAfterContent.afterSrc}
+          beforeAlt={beforeAfterContent.beforeAlt}
+          afterAlt={beforeAfterContent.afterAlt}
+          width={beforeAfterContent.width}
+          height={beforeAfterContent.height}
+        />
+      </div>
     </section>
   );
 }

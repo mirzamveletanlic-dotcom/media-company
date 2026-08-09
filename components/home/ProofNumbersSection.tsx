@@ -5,7 +5,7 @@ export function ProofNumbersSection() {
   return (
     <section
       aria-label="Client results"
-      className="viewport-full flex items-center bg-dark px-6"
+      className="viewport-full flex items-center bg-brown px-6"
     >
       <div className="mx-auto w-full max-w-[1200px]">
         <ul className="grid grid-cols-2 gap-x-8 gap-y-16 md:grid-cols-4 md:gap-y-0">

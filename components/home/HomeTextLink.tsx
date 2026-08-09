@@ -4,16 +4,14 @@ import type { ReactNode } from "react";
 type HomeTextLinkProps = {
   href: string;
   children: ReactNode;
-  light?: boolean;
 };
 
-export function HomeTextLink({ href, children, light = false }: HomeTextLinkProps) {
-  const color = light
-    ? "text-white/90 hover:text-white"
-    : "text-accent hover:opacity-70";
-
+export function HomeTextLink({ href, children }: HomeTextLinkProps) {
   return (
-    <Link href={href} className={`text-body transition-opacity ${color}`}>
+    <Link
+      href={href}
+      className="text-body text-bronze underline decoration-hairline underline-offset-4 transition-opacity hover:opacity-70"
+    >
       {children} ›
     </Link>
   );

@@ -6,7 +6,7 @@ export function AnswersSection() {
   return (
     <section
       aria-labelledby="answers-heading"
-      className="viewport-full flex items-center bg-white px-6 py-20"
+      className="viewport-full flex items-center bg-cream px-6 py-20"
     >
       <div className="mx-auto w-full max-w-[820px]">
         <h2 id="answers-heading" className="sr-only">
@@ -18,7 +18,7 @@ export function AnswersSection() {
               <li className="border-t border-hairline py-10 text-center last:border-b">
                 <Link
                   href={item.href}
-                  className="text-h3 text-near-black transition-opacity hover:opacity-60"
+                  className="text-h3 text-brown transition-opacity hover:opacity-60"
                 >
                   {item.question} ›
                 </Link>

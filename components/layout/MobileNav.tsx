@@ -34,7 +34,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
   return (
     <div
-      className="mobile-nav-overlay fixed inset-0 z-50 bg-white md:hidden"
+      className="mobile-nav-overlay fixed inset-0 z-50 bg-cream md:hidden"
       role="dialog"
       aria-modal="true"
       aria-label="Menu"
@@ -57,7 +57,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 <Link
                   href={link.href}
                   onClick={onClose}
-                  className="text-h2 text-near-black"
+                  className="text-h2 text-brown"
                 >
                   {link.label}
                 </Link>

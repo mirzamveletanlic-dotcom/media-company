@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const BLUR =
-  "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%23d2d2d7'/%3E%3C/svg%3E";
+  "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%23dbd3c8'/%3E%3C/svg%3E";
 
 type FullBleedImageProps = {
   src: string;

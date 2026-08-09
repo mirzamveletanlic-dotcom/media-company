@@ -1,7 +1,8 @@
 import { siteConfig } from "@/lib/site-config";
 
 export const heroContent = {
-  headline: "More booked jobs. Period.",
+  headline: "More booked jobs.",
+  headlineAccent: "Period.",
   subline: `Websites and local marketing for trades and clinics in ${siteConfig.city}.`,
   imageSrc: "/images/hero.jpg",
   imageAlt: "Contractor answering a call on a job site",

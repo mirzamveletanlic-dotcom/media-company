@@ -3,7 +3,7 @@ import { guarantees } from "@/lib/home-content";
 
 export function GuaranteesSection() {
   return (
-    <section aria-labelledby="guarantees-heading" className="bg-dark">
+    <section aria-labelledby="guarantees-heading" className="bg-mid-beige">
       <h2 id="guarantees-heading" className="sr-only">
         Our guarantees
       </h2>
@@ -14,7 +14,7 @@ export function GuaranteesSection() {
             className="viewport-third flex items-center justify-center px-6"
           >
             <ScrollReveal delay={index * 80}>
-              <p className="max-w-[820px] text-center text-h1 text-white">
+              <p className="max-w-[820px] text-center text-h1 text-brown">
                 {promise}
               </p>
             </ScrollReveal>
