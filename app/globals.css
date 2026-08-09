@@ -16,6 +16,7 @@
   --white: #ffffff;
 
   --size-hero: 40px;
+  --size-hero-display: 44px;
   --size-section: 32px;
   --size-sub: 22px;
   --size-stat: 36px;
@@ -34,6 +35,7 @@
 @media (min-width: 768px) {
   :root {
     --size-hero: 64px;
+    --size-hero-display: 76px;
     --size-section: 48px;
     --size-sub: 28px;
     --size-stat: 56px;

@@ -14,18 +14,35 @@ export const footnotes = {
 
 export type FootnoteId = keyof typeof footnotes;
 
+export type MasonryTile = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  tileHeight: "sm" | "md" | "lg" | "xl";
+};
+
 export const hero = {
   headlineBefore: "Your ",
   headlineSerif: "marketing team's",
   headlineAfter: " marketing team",
   subline: `Websites, SEO, social, and video for trades, clinics, and restaurants in ${siteConfig.city}. One flat price. Live in 21 days.`,
-  masonry: [
-    { src: "/images/hero.jpg", alt: "Contractor on a job site", width: 600, height: 750, tall: true },
-    { src: "/images/step-build.jpg", alt: "Website design", width: 600, height: 400 },
-    { src: "/images/missed-calls.jpg", alt: "Local search on phone", width: 600, height: 500 },
-    { src: "/images/after.jpg", alt: "Professional brand", width: 600, height: 450 },
-    { src: "/images/step-discovery.jpg", alt: "Content planning", width: 600, height: 550, tall: true },
-    { src: "/images/step-launch.jpg", alt: "Site launch", width: 600, height: 400 },
+  masonryColumns: [
+    [
+      { src: "/images/hero.jpg", alt: "Contractor on a job site", width: 600, height: 750, tileHeight: "xl" as const },
+      { src: "/images/after.jpg", alt: "Professional brand presentation", width: 600, height: 450, tileHeight: "md" as const },
+      { src: "/images/step-launch.jpg", alt: "Website launch", width: 600, height: 400, tileHeight: "lg" as const },
+    ],
+    [
+      { src: "/images/missed-calls.jpg", alt: "Local search on phone", width: 600, height: 500, tileHeight: "lg" as const },
+      { src: "/images/step-build.jpg", alt: "Website design", width: 600, height: 799, tileHeight: "md" as const },
+      { src: "/images/before.jpg", alt: "Website before redesign", width: 600, height: 500, tileHeight: "xl" as const },
+    ],
+    [
+      { src: "/images/step-discovery.jpg", alt: "Content planning session", width: 600, height: 800, tileHeight: "xl" as const },
+      { src: "/images/hero.jpg", alt: "Trade work in progress", width: 600, height: 750, tileHeight: "sm" as const },
+      { src: "/images/missed-calls.jpg", alt: "Google map results", width: 600, height: 500, tileHeight: "md" as const },
+    ],
   ],
 } as const;
 
