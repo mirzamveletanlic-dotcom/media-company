@@ -1,34 +1,32 @@
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { problemContent } from "@/lib/home-content";
-import { MonitorIcon, PhoneIcon, SearchIcon } from "./ProblemIcons";
-
-const iconMap = {
-  phone: PhoneIcon,
-  search: SearchIcon,
-  monitor: MonitorIcon,
-} as const;
+import { SectionIntro } from "./SectionIntro";
 
 export function ProblemSection() {
   return (
-    <section aria-labelledby="problem-heading" className="bg-white section-padding">
-      <div className="mx-auto max-w-[1200px] px-6">
-        <h2 id="problem-heading" className="text-h1 text-near-black max-w-text">
-          {problemContent.headline}
-        </h2>
+    <section
+      aria-labelledby="problem-heading"
+      className="screen-section bg-white px-6"
+    >
+      <div className="mx-auto w-full max-w-[1200px]">
+        <ScrollReveal>
+          <SectionIntro
+            id="problem-heading"
+            eyebrow="The problem"
+            headline={problemContent.headline}
+            align="center"
+          />
+        </ScrollReveal>
 
-        <ul className="mt-16 grid gap-8 md:grid-cols-3 md:gap-10">
-          {problemContent.cards.map((card) => {
-            const Icon = iconMap[card.icon];
-            return (
-              <li
-                key={card.id}
-                className="border-t border-hairline pt-8"
-              >
-                <Icon className="h-6 w-6 text-near-black" />
-                <h3 className="mt-6 text-h3 text-near-black">{card.title}</h3>
-                <p className="mt-4 text-body text-grey">{card.body}</p>
+        <ul className="mt-20 grid gap-16 md:mt-28 md:grid-cols-3 md:gap-12">
+          {problemContent.cards.map((card, index) => (
+            <ScrollReveal key={card.id} delay={index * 100}>
+              <li className="text-center md:text-left">
+                <h3 className="text-h3 text-near-black">{card.title}</h3>
+                <p className="mt-5 text-body leading-relaxed text-grey">{card.body}</p>
               </li>
-            );
-          })}
+            </ScrollReveal>
+          ))}
         </ul>
       </div>
     </section>

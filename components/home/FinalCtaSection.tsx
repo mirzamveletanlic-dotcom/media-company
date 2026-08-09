@@ -1,19 +1,25 @@
 import { BookCallLink } from "@/components/layout/BookCallLink";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { finalCtaContent } from "@/lib/home-content";
 
 export function FinalCtaSection() {
   return (
     <section
       aria-labelledby="final-cta-heading"
-      className="flex min-h-screen items-center bg-dark section-padding"
+      className="screen-section bg-dark px-6 text-center"
     >
-      <div className="mx-auto max-w-text px-6 text-center">
-        <h2 id="final-cta-heading" className="text-display text-white">
-          {finalCtaContent.headline}
-        </h2>
-        <div className="mt-10 flex justify-center">
-          <BookCallLink className="bg-white text-near-black hover:opacity-90" />
-        </div>
+      <div className="mx-auto max-w-[900px]">
+        <ScrollReveal>
+          <p className="text-small font-semibold text-grey">Get started</p>
+          <h2 id="final-cta-heading" className="mt-5 text-display text-white">
+            {finalCtaContent.headline}
+          </h2>
+        </ScrollReveal>
+        <ScrollReveal delay={120}>
+          <div className="mt-12 flex justify-center">
+            <BookCallLink inverted />
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

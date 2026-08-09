@@ -6,10 +6,10 @@ export function HeroSection() {
   return (
     <section
       aria-label="Introduction"
-      className="relative -mt-16 flex min-h-screen items-end md:items-center"
+      className="relative -mt-16 flex min-h-[100dvh] items-center justify-center overflow-hidden text-center"
     >
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full scale-105 object-cover"
         autoPlay
         muted
         loop
@@ -20,22 +20,21 @@ export function HeroSection() {
         <source src={heroContent.videoSrc} type="video/mp4" />
       </video>
 
-      <div
-        className="absolute inset-0 bg-dark/55"
-        aria-hidden="true"
-      />
+      <div className="hero-gradient absolute inset-0" aria-hidden="true" />
 
-      <div className="relative z-10 w-full px-6 pb-16 pt-32 md:pb-0 md:pt-16">
-        <div className="mx-auto max-w-text">
+      <div className="relative z-10 w-full px-6 pt-20 pb-24 md:pt-16 md:pb-16">
+        <div className="mx-auto max-w-[900px]">
           <h1 className="text-display text-white">{heroContent.headline}</h1>
-          <p className="mt-6 max-w-xl text-body text-white/80">{heroContent.subline}</p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <BookCallLink className="bg-white text-near-black hover:opacity-90" />
+          <p className="mx-auto mt-6 max-w-[640px] text-h3 font-normal text-white/75">
+            {heroContent.subline}
+          </p>
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+            <BookCallLink inverted />
             <Link
               href="/pricing"
-              className="inline-flex items-center rounded-full border border-white/60 px-5 py-2.5 text-small text-white transition-opacity hover:opacity-80"
+              className="inline-flex items-center rounded-full px-5 py-2.5 text-small text-accent transition-opacity hover:opacity-80"
             >
-              See pricing
+              See pricing ›
             </Link>
           </div>
         </div>

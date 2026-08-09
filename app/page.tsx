@@ -1,4 +1,3 @@
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { AnswersPreviewSection } from "@/components/home/AnswersPreviewSection";
 import { BeforeAfterSection } from "@/components/home/BeforeAfterSection";
 import { FinalCtaSection } from "@/components/home/FinalCtaSection";
@@ -8,40 +7,24 @@ import { HowItWorksSection } from "@/components/home/HowItWorksSection";
 import { PackageSection } from "@/components/home/PackageSection";
 import { ProblemSection } from "@/components/home/ProblemSection";
 import { ProofBarSection } from "@/components/home/ProofBarSection";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <ProofBarSection />
-
-      <ScrollReveal>
-        <ProblemSection />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <PackageSection />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <GuaranteesSection />
-      </ScrollReveal>
+      <ProblemSection />
+      <PackageSection />
+      <GuaranteesSection />
 
       <ScrollReveal>
         <BeforeAfterSection />
       </ScrollReveal>
 
-      <ScrollReveal>
-        <HowItWorksSection />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <AnswersPreviewSection />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <FinalCtaSection />
-      </ScrollReveal>
+      <HowItWorksSection />
+      <AnswersPreviewSection />
+      <FinalCtaSection />
     </>
   );
 }

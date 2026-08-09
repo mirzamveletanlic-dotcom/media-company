@@ -1,33 +1,52 @@
 import Link from "next/link";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { packageContent } from "@/lib/home-content";
+import { SectionIntro } from "./SectionIntro";
 
 export function PackageSection() {
   return (
-    <section aria-labelledby="package-heading" className="bg-white section-padding">
-      <div className="mx-auto max-w-text px-6 text-center">
-        <h2 id="package-heading" className="text-h1 text-near-black">
-          {packageContent.headline}
-        </h2>
+    <section
+      aria-labelledby="package-heading"
+      className="screen-section bg-white px-6"
+    >
+      <div className="mx-auto w-full max-w-[680px] text-center">
+        <ScrollReveal>
+          <SectionIntro
+            id="package-heading"
+            eyebrow="Pricing"
+            headline={packageContent.headline}
+            align="center"
+          />
+        </ScrollReveal>
 
-        <ul className="mt-16 space-y-4 text-left">
-          {packageContent.items.map((item) => (
-            <li key={item} className="border-b border-hairline pb-4 text-body text-near-black">
-              {item}
-            </li>
-          ))}
-        </ul>
+        <ScrollReveal delay={120}>
+          <p className="mt-16 text-display text-near-black">
+            ${packageContent.monthlyPrice}
+            <span className="ml-1 text-h3 font-normal text-grey">/month</span>
+          </p>
+        </ScrollReveal>
 
-        <p className="mt-16 text-display text-near-black">
-          ${packageContent.monthlyPrice}
-          <span className="text-h3 font-normal text-grey">/month</span>
-        </p>
+        <ScrollReveal delay={200}>
+          <ul className="mt-20 w-full text-left">
+            {packageContent.items.map((item) => (
+              <li
+                key={item}
+                className="border-t border-hairline py-5 text-body text-near-black last:border-b"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </ScrollReveal>
 
-        <Link
-          href="/pricing"
-          className="mt-8 inline-block text-small text-accent underline decoration-hairline underline-offset-4"
-        >
-          See full pricing breakdown
-        </Link>
+        <ScrollReveal delay={280}>
+          <Link
+            href="/pricing"
+            className="mt-12 inline-block text-small text-accent transition-opacity hover:opacity-70"
+          >
+            See full pricing breakdown ›
+          </Link>
+        </ScrollReveal>
       </div>
     </section>
   );

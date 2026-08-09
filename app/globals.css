@@ -21,6 +21,7 @@
 
   /* Spacing */
   --space-section-y: 64px;
+  --space-section-y-lg: 96px;
   --width-text: 980px;
 }
 
@@ -36,6 +37,7 @@
 
     /* Spacing */
     --space-section-y: 120px;
+    --space-section-y-lg: 160px;
   }
 }
 
@@ -84,6 +86,7 @@
 
   /* Spacing → py-section, pt-section, gap-section, etc. */
   --spacing-section: var(--space-section-y);
+  --spacing-section-lg: var(--space-section-y-lg);
 
   /* Layout → max-w-text */
   --max-width-text: var(--width-text);
@@ -126,6 +129,28 @@
 
 @utility section-padding {
   padding-block: var(--space-section-y);
+}
+
+@utility section-padding-lg {
+  padding-block: var(--space-section-y-lg);
+}
+
+@utility screen-section {
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-section-y-lg);
+}
+
+@utility hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0.45) 0%,
+    rgb(0 0 0 / 0.25) 40%,
+    rgb(0 0 0 / 0.65) 100%
+  );
 }
 
 @utility media-bleed {
