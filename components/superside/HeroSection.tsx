@@ -1,51 +1,66 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { hero, IMAGE_BLUR } from "@/lib/superside-home-content";
+import { siteConfig } from "@/lib/site-config";
 import { LimeButton } from "./LimeButton";
-import { MasonryGrid } from "./MasonryGrid";
 
 export function HeroSection() {
+  const bodyBefore = hero.bodyBefore.replace("[BRAND]", siteConfig.brand);
+
   return (
     <section
       id="hero"
       aria-label="Introduction"
       className="relative min-h-dvh overflow-hidden bg-forest"
     >
-      <div className="flex min-h-dvh flex-col lg:flex-row">
-        <div className="section-inner relative z-10 flex flex-col justify-center pb-10 pt-[calc(var(--nav-height)+2rem)] lg:w-[44%] lg:max-w-none lg:pb-0 lg:pr-8">
-          <ScrollReveal>
-            <h1 className="text-display leading-[1.05] tracking-tight text-white">
-              {hero.headlineBefore}
-              <span className="font-serif-accent text-lime">{hero.headlineSerif}</span>
-            </h1>
-            <p className="mt-6 max-w-copy text-body text-white/70">{hero.subline}</p>
-            <div className="mt-10">
-              <LimeButton href="/book" className="!px-7 !py-3.5">
-                Book a call
-              </LimeButton>
-            </div>
-          </ScrollReveal>
-        </div>
+      <Image
+        src={hero.imageSrc}
+        alt={hero.imageAlt}
+        fill
+        priority
+        placeholder="blur"
+        blurDataURL={IMAGE_BLUR}
+        sizes="100vw"
+        className="object-cover object-center"
+      />
 
-        <div className="relative hidden min-h-[420px] flex-1 lg:block">
-          <MasonryGrid columns={hero.masonryColumns} />
-          <div className="bleed-scrim-left pointer-events-none absolute inset-y-0 left-0 z-10 w-28" aria-hidden="true" />
-        </div>
+      <div className="hero-scrim absolute inset-0" aria-hidden="true" />
+      <div
+        className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/50 to-transparent"
+        aria-hidden="true"
+      />
 
-        {/* Mobile: single hero image */}
-        <div className="section-inner pb-10 lg:hidden">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-[var(--radius-card)]">
-            <Image
-              src="/images/hero.jpg"
-              alt="Contractor on a job site"
-              fill
-              placeholder="blur"
-              blurDataURL={IMAGE_BLUR}
-              sizes="100vw"
-              className="object-cover"
-            />
+      <div className="section-inner relative flex min-h-dvh flex-col justify-end pb-16 pt-[calc(var(--nav-height)+2.5rem)] md:justify-center md:pb-24">
+        <ScrollReveal className="max-w-copy">
+          <p className="text-eyebrow uppercase tracking-widest text-white/70">{hero.eyebrow}</p>
+
+          <h1 className="mt-6 text-display leading-[1.05] tracking-tight text-white">
+            {hero.headlineLines.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+            <span className="block font-serif-accent">{hero.headlineSerif}</span>
+          </h1>
+
+          <p className="mt-8 text-body leading-relaxed text-white/80">
+            {bodyBefore}
+            <Link
+              href={hero.bodyLink.href}
+              className="underline decoration-white/40 underline-offset-4 transition-colors hover:text-white"
+            >
+              {hero.bodyLink.text}
+            </Link>
+            {hero.bodyAfter}
+          </p>
+
+          <div className="mt-10">
+            <LimeButton href="/book" className="!px-8 !py-4 !text-body">
+              Book a call
+            </LimeButton>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

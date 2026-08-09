@@ -14,35 +14,18 @@ export const footnotes = {
 
 export type FootnoteId = keyof typeof footnotes;
 
-export type MasonryTile = {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  tileHeight: "sm" | "md" | "lg" | "xl";
-};
-
 export const hero = {
-  headlineBefore: "Websites built to ",
-  headlineSerif: "book jobs.",
-  subline: `One team for trades, clinics, and restaurants in ${siteConfig.city}. Website, SEO, social, and video — $497/month, live in 21 days.`,
-  masonryColumns: [
-    [
-      { src: "/images/hero.jpg", alt: "Contractor on a job site", width: 600, height: 750, tileHeight: "xl" as const },
-      { src: "/images/after.jpg", alt: "Professional brand presentation", width: 600, height: 450, tileHeight: "md" as const },
-      { src: "/images/step-launch.jpg", alt: "Website launch", width: 600, height: 400, tileHeight: "lg" as const },
-    ],
-    [
-      { src: "/images/missed-calls.jpg", alt: "Local search on phone", width: 600, height: 500, tileHeight: "lg" as const },
-      { src: "/images/step-build.jpg", alt: "Website design", width: 600, height: 799, tileHeight: "md" as const },
-      { src: "/images/before.jpg", alt: "Website before redesign", width: 600, height: 500, tileHeight: "xl" as const },
-    ],
-    [
-      { src: "/images/step-discovery.jpg", alt: "Content planning session", width: 600, height: 800, tileHeight: "xl" as const },
-      { src: "/images/step-launch.jpg", alt: "Analytics review", width: 600, height: 400, tileHeight: "sm" as const },
-      { src: "/images/missed-calls.jpg", alt: "Google map results", width: 600, height: 500, tileHeight: "md" as const },
-    ],
-  ],
+  eyebrow: "PRICING MODEL",
+  headlineLines: ["Take leads from", "invisible to booked"] as const,
+  headlineSerif: "3x faster.",
+  bodyBefore: `[BRAND] offers website, SEO, social, and video for trades and clinics in ${siteConfig.city} — `,
+  bodyLink: { text: "with published pricing.", href: "/pricing" },
+  bodyAfter:
+    " One team handles everything. Live in 21 days on average. $497/month.",
+  imageSrc: "/images/hero.jpg",
+  imageAlt: "Team reviewing marketing results",
+  imageWidth: 1920,
+  imageHeight: 1272,
 } as const;
 
 export const problem = {
